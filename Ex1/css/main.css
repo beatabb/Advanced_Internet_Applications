@@ -1,0 +1,52 @@
+
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+}
+
+#branding{
+    float: left;
+    width: 50%;
+}
+
+#branding h1{
+    font-size: 40px;
+    padding: 80px 15px 150px 80px; /* top right bottom left*/
+    color: #000;
+    margin: 0 !important;
+}
+
+.container{
+    margin: 0 auto;
+    width: 100%;
+    overflow: hidden;
+}
+
+#main-nav{
+    float: left;
+    width: 50%;
+    padding-top: 12px;
+}
+
+#main-nav ul{
+    float: right;
+}
+
+#main-nav li{
+    float: left;
+    padding: 3px 5px 0 5px;
+    margin: 0 15px;
+    font-size: 15px;
+    font-weight: bold;
+    list-style: none;
+    color: #000;
+}
+
+/*@media only screen and (min-width: 1024px){
+    body{
+        width: 100%;
+        color: brown;
+    }
+}*/
