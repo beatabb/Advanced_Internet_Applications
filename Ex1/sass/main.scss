@@ -1,6 +1,20 @@
 $primary-color: #272727;
+$lorem-color: #4c9f6b;
 $branding-padding: 80px 15px 150px 80px; /* top right bottom left*/
 $main-nav-li-padding: 3px 10px 0 10px;
+$lorem-padding: 50px 25px 50px 25px;
+
+$font-weights: (
+    "regular": 400,
+    "medium": 500,
+    "bold": 700
+);
+$font-size: (
+    "big": 40px,
+    "medium": 28px,
+    "normal": 20px,
+    "small": 15px
+);
 
 html, body {
     margin: 0;
@@ -15,7 +29,7 @@ html, body {
 }
 
 #branding h1{
-    font-size: 40px;
+    font-size: map-get($font-size, big );
     padding: $branding-padding; 
     color: $primary-color;
     margin: 0 !important;
@@ -23,7 +37,7 @@ html, body {
 
 .container{
     margin: 0 auto;
-    width: 100%;
+    width: 90%;
     overflow: hidden;
 }
 
@@ -41,15 +55,39 @@ html, body {
     float: left;
     padding: $main-nav-li-padding;
     margin: 0 15px;
-    font-size: 15px;
-    font-weight: bold;
+    font-size: map-get($font-size, small );
+    font-weight: map-get($font-weights, bold );
     list-style: none;
     color: $primary-color;
 }
 
-/*@media only screen and (min-width: 1024px){
-    body{
-        width: 100%;
-        color: brown;
+@media only screen and (min-width: 1024px){
+    .lorem{
+        width: 25%;
+        height: 100%;
+        margin: 2%;
+        color: $primary-color;
+        background-color: $lorem-color;
+        float: left;
+        padding: $lorem-padding;
+        margin-bottom: 5%;
+        border-style: solid;
     }
-}*/
+
+    #footer{
+        clear: both;
+        height: 150px;
+        background-color: $lorem-color;
+        font-size: map-get($font-size, small );
+        text-align: center;
+        vertical-align: middle;
+        padding-top: 5%;
+        border-style: solid;
+    }
+
+    #footer h1{
+        font-weight: map-get($font-weights, bold );
+        font-size: map-get($font-size, small );
+        vertical-align: middle;
+    }
+}

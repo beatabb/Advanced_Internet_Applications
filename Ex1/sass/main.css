@@ -20,7 +20,7 @@ html, body {
 
 .container {
   margin: 0 auto;
-  width: 100%;
+  width: 90%;
   overflow: hidden;
 }
 
@@ -39,15 +39,37 @@ html, body {
   padding: 3px 10px 0 10px;
   margin: 0 15px;
   font-size: 15px;
-  font-weight: bold;
+  font-weight: 700;
   list-style: none;
   color: #272727;
 }
 
-/*@media only screen and (min-width: 1024px){
-    body{
-        width: 100%;
-        color: brown;
-    }
-}*/
+@media only screen and (min-width: 1024px) {
+  .lorem {
+    width: 25%;
+    height: 100%;
+    margin: 2%;
+    color: #272727;
+    background-color: #4c9f6b;
+    float: left;
+    padding: 50px 25px 50px 25px;
+    margin-bottom: 5%;
+    border-style: solid;
+  }
+  #footer {
+    clear: both;
+    height: 150px;
+    background-color: #4c9f6b;
+    font-size: 15px;
+    text-align: center;
+    vertical-align: middle;
+    padding-top: 5%;
+    border-style: solid;
+  }
+  #footer h1 {
+    font-weight: 700;
+    font-size: 15px;
+    vertical-align: middle;
+  }
+}
 /*# sourceMappingURL=main.css.map */
