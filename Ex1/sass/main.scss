@@ -136,35 +136,44 @@ $font-size: (
         overflow: hidden;
     }
 
-    #ipsum_dolor{
-        display: flex;
-        margin: 0 2% 0 2%;
-    }
-
     #main-nav{
         display: none;
     }
 
+    #main-content{
+        padding: 1%;
+	    display: grid;
+        grid-template-columns: 50% 50%;
+        grid-template-rows: 45% 45%;
+	    grid-gap: 1px 1px;
+    }
+
+    #main-content>div:nth-child(1){
+        grid-column: span 2;
+        background-color: red($color: #000000);
+    }
+    #main-content>div:nth-child(2){
+        grid-column: span 1;
+        background-color: green($color: #000000);
+    }
+    #main-content>div:nth-child(3){
+        grid-column: span 1;
+        background-color: blue($color: #000000);
+    }
     #lorem{
-        width: 90%;
-        height: 100%;
-        margin: 4%;
+        display: grid;
+        
         color: $primary-color;
         background-color: $lorem-color;
-        padding: $lorem-padding2;
-        margin-bottom: 5%;
         border-style: solid;
     }
 
     #ipsum, #dolor{
-        width: 43%;
-        margin: 2%;
-        float: left;
+        display: grid;
         color: $primary-color;
         background-color: $lorem-color;
-        padding: $lorem-padding2;
-        margin-bottom: 5%;
         border-style: solid;
+        grid-column: span 6;
     }
 
     #footer{

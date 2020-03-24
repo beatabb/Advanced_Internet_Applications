@@ -103,34 +103,45 @@
     width: 98%;
     overflow: hidden;
   }
-  #ipsum_dolor {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    margin: 0 2% 0 2%;
-  }
   #main-nav {
     display: none;
   }
+  #main-content {
+    padding: 1%;
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 50% 50%;
+        grid-template-columns: 50% 50%;
+    -ms-grid-rows: 45% 45%;
+        grid-template-rows: 45% 45%;
+    grid-gap: 1px 1px;
+  }
+  #main-content > div:nth-child(1) {
+    grid-column: span 2;
+    background-color: 0;
+  }
+  #main-content > div:nth-child(2) {
+    grid-column: span 1;
+    background-color: 0;
+  }
+  #main-content > div:nth-child(3) {
+    grid-column: span 1;
+    background-color: 0;
+  }
   #lorem {
-    width: 90%;
-    height: 100%;
-    margin: 4%;
+    display: -ms-grid;
+    display: grid;
     color: #272727;
     background-color: #4c9f6b;
-    padding: 2% 1% 2% 1%;
-    margin-bottom: 5%;
     border-style: solid;
   }
   #ipsum, #dolor {
-    width: 43%;
-    margin: 2%;
-    float: left;
+    display: -ms-grid;
+    display: grid;
     color: #272727;
     background-color: #4c9f6b;
-    padding: 2% 1% 2% 1%;
-    margin-bottom: 5%;
     border-style: solid;
+    grid-column: span 6;
   }
   #footer {
     clear: both;
