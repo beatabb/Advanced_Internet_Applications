@@ -68,24 +68,32 @@ $font-size: (
     }
 
     #main-content{
-        background-color: powderblue;
-        width: 100%;
+        width: auto;
         height: auto;
-        margin-left: 2%;
-        margin-right: 2%;
         display: flex;
+        margin: 0 2% 0 2%;
     }
 
     .lorem_ipsum{
         width: 25%;
         display: flex;
-        margin: 1%;
+        margin: 0 2% 5% 2%;
         color: $primary-color;
         background-color: $lorem-color;
         float: left;
         padding: $lorem-padding;
-        margin-bottom: 5%;
         border-style: solid;
+    }
+
+    .title{
+        background-color: yellow;
+        padding: 1%;
+        width: 100%;
+        position: sticky;
+    }
+
+    #main-content p{
+        clear: both;
     }
 
     #footer{

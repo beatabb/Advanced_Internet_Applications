@@ -41,27 +41,34 @@
     color: #272727;
   }
   #main-content {
-    background-color: powderblue;
-    width: 100%;
+    width: auto;
     height: auto;
-    margin-left: 2%;
-    margin-right: 2%;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
+    margin: 0 2% 0 2%;
   }
   .lorem_ipsum {
     width: 25%;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    margin: 1%;
+    margin: 0 2% 5% 2%;
     color: #272727;
     background-color: #4c9f6b;
     float: left;
     padding: 50px 25px 0px 25px;
-    margin-bottom: 5%;
     border-style: solid;
+  }
+  .title {
+    background-color: yellow;
+    padding: 1%;
+    width: 100%;
+    position: -webkit-sticky;
+    position: sticky;
+  }
+  #main-content p {
+    clear: both;
   }
   #footer {
     clear: both;
