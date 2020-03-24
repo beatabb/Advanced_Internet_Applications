@@ -68,14 +68,14 @@ $font-size: (
     }
 
     #main-content{
-        width: auto;
+        width: 100%;
         height: auto;
         display: flex;
         margin: 0 2% 0 2%;
     }
-
+    
     .lorem_ipsum{
-        width: 25%;
+        width: 30%;
         margin: 0 2% 5% 2%;
         color: $primary-color;
         background-color: $lorem-color;
@@ -120,7 +120,7 @@ $font-size: (
     
     #branding{
         float: left;
-        width: 50%;
+        width: 80%;
     }
     
     #branding h1{
@@ -135,29 +135,14 @@ $font-size: (
         width: 98%;
         overflow: hidden;
     }
-    
-    #main-nav{
-        float: left;
-        width: 50%;
-        padding-top: 12px;
-    }
-    
-    #main-nav ul{
-        float: right;
-    }
-    
-    #main-nav li{
-        float: left;
-        padding: $main-nav-li-padding;
-        margin: 0 15px;
-        font-size: map-get($font-size, small );
-        font-weight: map-get($font-weights, bold );
-        list-style: none;
-        color: $primary-color;
-    }
 
     #ipsum_dolor{
         display: flex;
+        margin: 0 2% 0 2%;
+    }
+
+    #main-nav{
+        display: none;
     }
 
     #lorem{

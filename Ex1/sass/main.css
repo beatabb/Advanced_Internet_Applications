@@ -41,7 +41,7 @@
     color: #272727;
   }
   #main-content {
-    width: auto;
+    width: 100%;
     height: auto;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -49,7 +49,7 @@
     margin: 0 2% 0 2%;
   }
   .lorem_ipsum {
-    width: 25%;
+    width: 30%;
     margin: 0 2% 5% 2%;
     color: #272727;
     background-color: #4c9f6b;
@@ -90,7 +90,7 @@
   }
   #branding {
     float: left;
-    width: 50%;
+    width: 80%;
   }
   #branding h1 {
     font-size: 28px;
@@ -103,27 +103,14 @@
     width: 98%;
     overflow: hidden;
   }
-  #main-nav {
-    float: left;
-    width: 50%;
-    padding-top: 12px;
-  }
-  #main-nav ul {
-    float: right;
-  }
-  #main-nav li {
-    float: left;
-    padding: 3px 10px 0 10px;
-    margin: 0 15px;
-    font-size: 16px;
-    font-weight: 700;
-    list-style: none;
-    color: #272727;
-  }
   #ipsum_dolor {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
+    margin: 0 2% 0 2%;
+  }
+  #main-nav {
+    display: none;
   }
   #lorem {
     width: 90%;
