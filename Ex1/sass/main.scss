@@ -76,7 +76,6 @@ $font-size: (
 
     .lorem_ipsum{
         width: 25%;
-        display: flex;
         margin: 0 2% 5% 2%;
         color: $primary-color;
         background-color: $lorem-color;
@@ -90,11 +89,7 @@ $font-size: (
         padding: 1%;
         width: 100%;
         position: sticky;
-    }
-
-    #main-content p{
-        clear: both;
-    }
+    } 
 
     #footer{
         clear: both;
@@ -115,6 +110,7 @@ $font-size: (
 }
 
 @media only screen and (min-width: 768px) and (max-width: 1023px){
+
     html, body {
         margin: 0;
         padding: 0;
@@ -131,7 +127,7 @@ $font-size: (
         font-size: map-get($font-size, medium);
         padding: $branding-padding; 
         color: $primary-color;
-        margin: 0 !important;
+        margin: 0;
     }
     
     .container{
@@ -146,11 +142,11 @@ $font-size: (
         padding-top: 12px;
     }
     
-        #main-nav ul{
+    #main-nav ul{
         float: right;
-        }
+    }
     
-        #main-nav li{
+    #main-nav li{
         float: left;
         padding: $main-nav-li-padding;
         margin: 0 15px;
@@ -158,12 +154,16 @@ $font-size: (
         font-weight: map-get($font-weights, bold );
         list-style: none;
         color: $primary-color;
-        }
+    }
+
+    #ipsum_dolor{
+        display: flex;
+    }
 
     #lorem{
-        width: 60%;
+        width: 90%;
         height: 100%;
-        margin: 2%;
+        margin: 4%;
         color: $primary-color;
         background-color: $lorem-color;
         padding: $lorem-padding2;
@@ -200,6 +200,7 @@ $font-size: (
     }
 }
 
+/* Mobile */
 @media only screen and (max-width: 767px){
     .lorem_ipsum{
         width: 80%;

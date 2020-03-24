@@ -50,9 +50,6 @@
   }
   .lorem_ipsum {
     width: 25%;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
     margin: 0 2% 5% 2%;
     color: #272727;
     background-color: #4c9f6b;
@@ -66,9 +63,6 @@
     width: 100%;
     position: -webkit-sticky;
     position: sticky;
-  }
-  #main-content p {
-    clear: both;
   }
   #footer {
     clear: both;
@@ -102,7 +96,7 @@
     font-size: 28px;
     padding: 80px 10px 150px 80px;
     color: #272727;
-    margin: 0 !important;
+    margin: 0;
   }
   .container {
     margin: 0 auto;
@@ -126,10 +120,15 @@
     list-style: none;
     color: #272727;
   }
+  #ipsum_dolor {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
   #lorem {
-    width: 60%;
+    width: 90%;
     height: 100%;
-    margin: 2%;
+    margin: 4%;
     color: #272727;
     background-color: #4c9f6b;
     padding: 2% 1% 2% 1%;
@@ -163,6 +162,7 @@
   }
 }
 
+/* Mobile */
 @media only screen and (max-width: 767px) {
   .lorem_ipsum {
     width: 80%;
