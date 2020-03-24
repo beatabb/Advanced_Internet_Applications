@@ -45,7 +45,7 @@ html, body {
 }
 
 @media only screen and (min-width: 1024px) {
-  .lorem {
+  .lorem_ipsum {
     width: 25%;
     height: 100%;
     margin: 2%;
@@ -65,6 +65,73 @@ html, body {
     vertical-align: middle;
     padding-top: 5%;
     border-style: solid;
+  }
+  #footer h1 {
+    font-weight: 700;
+    font-size: 15px;
+    vertical-align: middle;
+  }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
+  #lorem {
+    width: auto;
+    height: 100%;
+    margin: 2%;
+    color: #272727;
+    background-color: #4c9f6b;
+    padding: 2% 1% 2% 1%;
+    margin-bottom: 5%;
+    border-style: solid;
+  }
+  #ipsum, #dolor {
+    width: 43%;
+    margin: 2%;
+    float: left;
+    color: #272727;
+    background-color: #4c9f6b;
+    padding: 2% 1% 2% 1%;
+    margin-bottom: 5%;
+    border-style: solid;
+  }
+  #footer {
+    clear: both;
+    height: 150px;
+    background-color: #4c9f6b;
+    font-size: 15px;
+    text-align: center;
+    vertical-align: middle;
+    padding-top: 5%;
+    border-style: solid;
+  }
+  #footer h1 {
+    font-weight: 700;
+    font-size: 15px;
+    vertical-align: middle;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .lorem_ipsum {
+    width: 80%;
+    height: 100%;
+    margin: 10%;
+    color: #272727;
+    background-color: #4c9f6b;
+    padding: 2% 1% 2% 1%;
+    margin-bottom: 5%;
+    border-style: solid;
+  }
+  #footer {
+    clear: both;
+    height: 150px;
+    background-color: #4c9f6b;
+    font-size: 15px;
+    text-align: center;
+    vertical-align: middle;
+    padding-top: 5%;
+    border-style: solid;
+    margin-top: 10%;
   }
   #footer h1 {
     font-weight: 700;
