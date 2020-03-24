@@ -1,8 +1,8 @@
 $primary-color: #272727;
 $lorem-color: #4c9f6b;
-$branding-padding: 80px 15px 150px 80px; /* top right bottom left*/
+$branding-padding: 80px 10px 150px 80px; /* top right bottom left*/
 $main-nav-li-padding: 3px 10px 0 10px;
-$lorem-padding: 50px 25px 50px 25px;
+$lorem-padding: 50px 25px 0px 25px;
 $lorem-padding2: 2% 1% 2% 1%;
 
 $font-weights: (
@@ -11,62 +11,75 @@ $font-weights: (
     "bold": 700
 );
 $font-size: (
-    "big": 40px,
+    "big": 32px,
     "medium": 28px,
     "normal": 20px,
-    "small": 15px
+    "small": 16px
 );
 
-html, body {
-    margin: 0;
-    padding: 0;
-    height: 100%;
-    width: 100%;
-}
-
-#branding{
-    float: left;
-    width: 50%;
-}
-
-#branding h1{
-    font-size: map-get($font-size, big );
-    padding: $branding-padding; 
-    color: $primary-color;
-    margin: 0 !important;
-}
-
-.container{
-    margin: 0 auto;
-    width: 90%;
-    overflow: hidden;
-}
-
-#main-nav{
-    float: left;
-    width: 50%;
-    padding-top: 12px;
-}
-
-#main-nav ul{
-    float: right;
-}
-
-#main-nav li{
-    float: left;
-    padding: $main-nav-li-padding;
-    margin: 0 15px;
-    font-size: map-get($font-size, small );
-    font-weight: map-get($font-weights, bold );
-    list-style: none;
-    color: $primary-color;
-}
 
 @media only screen and (min-width: 1024px){
+
+    html, body {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        width: 100%;
+    }
+
+    #branding{
+        float: left;
+        width: 50%;
+        background-color: pink;
+    }
+
+    #branding h1{
+        font-size: map-get($font-size, big );
+        padding: $branding-padding; 
+        color: $primary-color;
+        margin: 0;
+    }
+
+    .container{
+        margin: 0 auto;
+        width: 100%;
+        overflow: hidden;
+    }
+
+    #main-nav{
+        float: left;
+        width: 50%;
+        padding-top: 12px;
+        background-color: plum;
+    }
+
+    #main-nav ul{
+        float: right;
+    }
+
+    #main-nav li{
+        float: left;
+        padding: $main-nav-li-padding;
+        margin: 0 10px;
+        font-size: map-get($font-size, small );
+        font-weight: map-get($font-weights, bold );
+        list-style: none;
+        color: $primary-color;
+    }
+
+    #main-content{
+        background-color: powderblue;
+        width: 100%;
+        height: auto;
+        margin-left: 2%;
+        margin-right: 2%;
+        display: flex;
+    }
+
     .lorem_ipsum{
         width: 25%;
-        height: 100%;
-        margin: 2%;
+        display: flex;
+        margin: 1%;
         color: $primary-color;
         background-color: $lorem-color;
         float: left;
@@ -94,8 +107,53 @@ html, body {
 }
 
 @media only screen and (min-width: 768px) and (max-width: 1023px){
-    #lorem{
+    html, body {
+        margin: 0;
+        padding: 0;
+        height: auto;
         width: auto;
+    }
+    
+    #branding{
+        float: left;
+        width: 50%;
+    }
+    
+    #branding h1{
+        font-size: map-get($font-size, medium);
+        padding: $branding-padding; 
+        color: $primary-color;
+        margin: 0 !important;
+    }
+    
+    .container{
+        margin: 0 auto;
+        width: 98%;
+        overflow: hidden;
+    }
+    
+    #main-nav{
+        float: left;
+        width: 50%;
+        padding-top: 12px;
+    }
+    
+        #main-nav ul{
+        float: right;
+        }
+    
+        #main-nav li{
+        float: left;
+        padding: $main-nav-li-padding;
+        margin: 0 15px;
+        font-size: map-get($font-size, small );
+        font-weight: map-get($font-weights, bold );
+        list-style: none;
+        color: $primary-color;
+        }
+
+    #lorem{
+        width: 60%;
         height: 100%;
         margin: 2%;
         color: $primary-color;

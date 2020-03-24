@@ -1,58 +1,65 @@
 /* top right bottom left*/
-html, body {
-  margin: 0;
-  padding: 0;
-  height: 100%;
-  width: 100%;
-}
-
-#branding {
-  float: left;
-  width: 50%;
-}
-
-#branding h1 {
-  font-size: 40px;
-  padding: 80px 15px 150px 80px;
-  color: #272727;
-  margin: 0 !important;
-}
-
-.container {
-  margin: 0 auto;
-  width: 90%;
-  overflow: hidden;
-}
-
-#main-nav {
-  float: left;
-  width: 50%;
-  padding-top: 12px;
-}
-
-#main-nav ul {
-  float: right;
-}
-
-#main-nav li {
-  float: left;
-  padding: 3px 10px 0 10px;
-  margin: 0 15px;
-  font-size: 15px;
-  font-weight: 700;
-  list-style: none;
-  color: #272727;
-}
-
 @media only screen and (min-width: 1024px) {
+  html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+  }
+  #branding {
+    float: left;
+    width: 50%;
+    background-color: pink;
+  }
+  #branding h1 {
+    font-size: 32px;
+    padding: 80px 10px 150px 80px;
+    color: #272727;
+    margin: 0;
+  }
+  .container {
+    margin: 0 auto;
+    width: 100%;
+    overflow: hidden;
+  }
+  #main-nav {
+    float: left;
+    width: 50%;
+    padding-top: 12px;
+    background-color: plum;
+  }
+  #main-nav ul {
+    float: right;
+  }
+  #main-nav li {
+    float: left;
+    padding: 3px 10px 0 10px;
+    margin: 0 10px;
+    font-size: 16px;
+    font-weight: 700;
+    list-style: none;
+    color: #272727;
+  }
+  #main-content {
+    background-color: powderblue;
+    width: 100%;
+    height: auto;
+    margin-left: 2%;
+    margin-right: 2%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
   .lorem_ipsum {
     width: 25%;
-    height: 100%;
-    margin: 2%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    margin: 1%;
     color: #272727;
     background-color: #4c9f6b;
     float: left;
-    padding: 50px 25px 50px 25px;
+    padding: 50px 25px 0px 25px;
     margin-bottom: 5%;
     border-style: solid;
   }
@@ -60,7 +67,7 @@ html, body {
     clear: both;
     height: 150px;
     background-color: #4c9f6b;
-    font-size: 15px;
+    font-size: 16px;
     text-align: center;
     vertical-align: middle;
     padding-top: 5%;
@@ -68,14 +75,52 @@ html, body {
   }
   #footer h1 {
     font-weight: 700;
-    font-size: 15px;
+    font-size: 16px;
     vertical-align: middle;
   }
 }
 
 @media only screen and (min-width: 768px) and (max-width: 1023px) {
-  #lorem {
+  html, body {
+    margin: 0;
+    padding: 0;
+    height: auto;
     width: auto;
+  }
+  #branding {
+    float: left;
+    width: 50%;
+  }
+  #branding h1 {
+    font-size: 28px;
+    padding: 80px 10px 150px 80px;
+    color: #272727;
+    margin: 0 !important;
+  }
+  .container {
+    margin: 0 auto;
+    width: 98%;
+    overflow: hidden;
+  }
+  #main-nav {
+    float: left;
+    width: 50%;
+    padding-top: 12px;
+  }
+  #main-nav ul {
+    float: right;
+  }
+  #main-nav li {
+    float: left;
+    padding: 3px 10px 0 10px;
+    margin: 0 15px;
+    font-size: 16px;
+    font-weight: 700;
+    list-style: none;
+    color: #272727;
+  }
+  #lorem {
+    width: 60%;
     height: 100%;
     margin: 2%;
     color: #272727;
@@ -98,7 +143,7 @@ html, body {
     clear: both;
     height: 150px;
     background-color: #4c9f6b;
-    font-size: 15px;
+    font-size: 16px;
     text-align: center;
     vertical-align: middle;
     padding-top: 5%;
@@ -106,7 +151,7 @@ html, body {
   }
   #footer h1 {
     font-weight: 700;
-    font-size: 15px;
+    font-size: 16px;
     vertical-align: middle;
   }
 }
@@ -126,7 +171,7 @@ html, body {
     clear: both;
     height: 150px;
     background-color: #4c9f6b;
-    font-size: 15px;
+    font-size: 16px;
     text-align: center;
     vertical-align: middle;
     padding-top: 5%;
@@ -135,7 +180,7 @@ html, body {
   }
   #footer h1 {
     font-weight: 700;
-    font-size: 15px;
+    font-size: 16px;
     vertical-align: middle;
   }
 }
