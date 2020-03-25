@@ -23,13 +23,6 @@ html, body {
     width: 100%;
 }
 
-img{
-    height: 15%;
-    width: 15%;
-    padding: 10% 5% 10% 10%;
-    float: left;
-}
-
 #lorem h1{
     background-color: rgb(43, 145, 228);
 }
@@ -67,6 +60,13 @@ img{
 
 
 @media only screen and (min-width: 1024px){
+
+    img{
+        height: 15%;
+        width: 15%;
+        padding: 10% 5% 10% 10%;
+        float: left;
+    }
 
     #branding{
         float: left;
@@ -147,6 +147,13 @@ img{
 }
 
 @media only screen and (min-width: 768px) and (max-width: 1023px){
+
+    img{
+        height: 13%;
+        width: 13%;
+        padding: 10% 5% 10% 10%;
+        float: left;
+    }
     
     #branding{
         float: left;
@@ -154,7 +161,7 @@ img{
     }
     
     #branding h1{
-        font-size: map-get($font-size, medium);
+        font-size: map-get($font-size, big);
         padding: $branding-padding; 
         color: $primary-color;
         margin: 0;
@@ -168,6 +175,43 @@ img{
 
     #main-nav{
         display: none;
+    }
+
+    #menu-nav{
+        display: block;
+        position: fixed;
+        right: 0;
+        top:0;
+        z-index: 1000;
+        padding: 5% 0;
+    }
+
+    #menu-nav > ul{
+        display: none;
+    }
+
+    #menu-nav:hover > ul{
+        display: block;
+        background-color: white;
+    }
+
+    #menu-nav:hover > ul > li{
+        list-style-type: none;
+        background-color: white;
+        padding: 5%;
+        display: inline-block;
+        line-height: 50%;
+        vertical-align: middle;
+        margin-right: 100%;
+    }
+
+    #menu-nav:hover > ul > li:hover{
+        color: #777777;
+    }
+
+    #menu-nav > img {
+        height: 30%;
+        width: 30%;
     }
 
     #main-content{
@@ -235,7 +279,14 @@ img{
     }
 
     #main-nav{
-        display: none;
+        float: right;
+        list-style: square;
+    }
+
+    #main-nav:hover {
+        display: grid;
+        visibility: visible;
+        float: left;
     }
 
     .lorem_ipsum{
