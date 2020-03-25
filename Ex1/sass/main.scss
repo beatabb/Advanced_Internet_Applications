@@ -23,6 +23,48 @@ html, body {
     width: 100%;
 }
 
+#menu-nav > img{
+    position: sticky;
+}
+
+#menu-nav{
+    display: block;
+    position: fixed;
+    height: auto;
+    right: 0;
+    top:0;
+    z-index: 1000;
+    padding: 5% 0;
+}
+
+#menu-nav > ul{
+    display: none;
+}
+
+#menu-nav:hover > ul{
+    display: block;
+    background-color: white;
+}
+
+#menu-nav:hover > ul > li{
+    list-style-type: none;
+    background-color: white;
+    padding: 5%;
+    display: inline-block;
+    line-height: 50%;
+    vertical-align: middle;
+    margin-right: 100%;
+}
+
+#menu-nav:hover > ul > li:hover{
+    color: #777777;
+}
+
+#menu-nav > img {
+    height: 30%;
+    width: 30%;
+}
+
 #lorem h1{
     background-color: rgb(43, 145, 228);
 }
@@ -85,6 +127,10 @@ html, body {
         margin: 0 auto;
         width: 100%;
         overflow: hidden;
+    }
+
+    #menu-nav{
+        display: none;
     }
 
     #main-nav{
@@ -177,9 +223,14 @@ html, body {
         display: none;
     }
 
+    #menu-nav > img{
+        position: sticky;
+    }
+
     #menu-nav{
         display: block;
         position: fixed;
+        height: auto;
         right: 0;
         top:0;
         z-index: 1000;
@@ -272,6 +323,17 @@ html, body {
 /* Mobile */
 @media only screen and (max-width: 767px){
 
+    img{
+        height: 13%;
+        width: 13%;
+        padding: 10% 5% 10% 10%;
+        float: left;
+    }
+
+    #branding h1{
+        display: none;
+    }
+
     .container{
         margin: 0 auto;
         width: 98%;
@@ -279,14 +341,7 @@ html, body {
     }
 
     #main-nav{
-        float: right;
-        list-style: square;
-    }
-
-    #main-nav:hover {
-        display: grid;
-        visibility: visible;
-        float: left;
+        display: none;
     }
 
     .lorem_ipsum{
