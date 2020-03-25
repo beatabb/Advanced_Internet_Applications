@@ -1,8 +1,8 @@
 $primary-color: #272727;
 $lorem-color: #acd8bc;
-$branding-padding: 80px 10px 150px 80px; /* top right bottom left*/
+$branding-padding: 15% 0 150px 0; /* top right bottom left*/
 $main-nav-li-padding: 3px 10px 0 10px;
-$lorem-padding: 50px 25px 0px 25px;
+$lorem-padding: 60px 25px 0px 25px;
 $lorem-padding2: 2% 1% 2% 1%;
 
 $font-weights: (
@@ -16,6 +16,20 @@ $font-size: (
     "small": 16px
 );
 
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+}
+
+img{
+    height: 15%;
+    width: 15%;
+    padding: 10% 5% 10% 10%;
+    float: left;
+}
+
 #lorem h1{
     background-color: rgb(43, 145, 228);
 }
@@ -28,15 +42,31 @@ $font-size: (
     background-color: rgb(205, 157, 236);
 }
 
+.lorem_ipsum{
+    color: $primary-color;
+    background-color: $lorem-color;
+    float: left;
+    padding: $lorem-padding;
+    border: 3px solid black;
+    position: relative;
+}
+
+.title{
+    position: absolute;
+    border-bottom: 3px solid black;
+    border-left: 3px solid black;
+    margin: 0;
+    top:0;
+    right: 0;
+    width: 50%;
+    height: 5%;
+    text-align: center;
+    padding: 3%;
+    font-size: 24px;
+} 
+
 
 @media only screen and (min-width: 1024px){
-
-    html, body {
-        margin: 0;
-        padding: 0;
-        height: 100%;
-        width: 100%;
-    }
 
     #branding{
         float: left;
@@ -97,29 +127,6 @@ $font-size: (
         grid-column: span 1;
         background-color: blue($color: #000000);
     }
-    
-    .lorem_ipsum{
-        color: $primary-color;
-        background-color: $lorem-color;
-        float: left;
-        padding: $lorem-padding;
-        border: 3px solid black;
-        position: relative;
-    }
-
-    .title{
-        position: absolute;
-        border-bottom: 3px solid black;
-        border-left: 3px solid black;
-        margin: 0;
-        top:0;
-        right: 0;
-        width: 50%;
-	    height: 5%;
-        text-align: center;
-        padding: 3%;
-	    font-size: 24px;
-    } 
 
     #footer{
         clear: both;
@@ -140,13 +147,6 @@ $font-size: (
 }
 
 @media only screen and (min-width: 768px) and (max-width: 1023px){
-
-    html, body {
-        margin: 0;
-        padding: 0;
-        height: auto;
-        width: auto;
-    }
     
     #branding{
         float: left;
@@ -194,7 +194,7 @@ $font-size: (
 
     #lorem{
         display: grid;
-        
+        padding-top: 10%;
         color: $primary-color;
         background-color: $lorem-color;
         border-style: solid;
@@ -205,7 +205,6 @@ $font-size: (
         color: $primary-color;
         background-color: $lorem-color;
         border-style: solid;
-        grid-column: span 6;
     }
 
     #footer{
@@ -228,6 +227,49 @@ $font-size: (
 
 /* Mobile */
 @media only screen and (max-width: 767px){
+
+    .container{
+        margin: 0 auto;
+        width: 98%;
+        overflow: hidden;
+    }
+
+    #main-nav{
+        display: none;
+    }
+
+    .lorem_ipsum{
+        width: 80%;
+        height: 100%;
+        margin: 5%;
+        color: $primary-color;
+        background-color: $lorem-color;
+        padding: $lorem-padding;
+        border-style: solid;
+    }
+    
+
+    #footer{
+        position: sticky;
+        clear: both;
+        height: 150px;
+        background-color: $lorem-color;
+        font-size: map-get($font-size, small );
+        text-align: center;
+        vertical-align: middle;
+        padding-top: 5%;
+        border-style: solid;
+    }
+
+    #footer h1{
+        font-weight: map-get($font-weights, bold );
+        font-size: map-get($font-size, small );
+        vertical-align: middle;
+    }
+
+}
+
+/* 
     .lorem_ipsum{
         width: 80%;
         height: 100%;
@@ -239,22 +281,4 @@ $font-size: (
         border-style: solid;
     }
 
-    #footer{
-        clear: both;
-        height: 150px;
-        background-color: $lorem-color;
-        font-size: map-get($font-size, small );
-        text-align: center;
-        vertical-align: middle;
-        padding-top: 5%;
-        border-style: solid;
-        margin-top: 10%;
-    }
-
-    #footer h1{
-        font-weight: map-get($font-weights, bold );
-        font-size: map-get($font-size, small );
-        vertical-align: middle;
-    }
-
-}
+*/
