@@ -1,5 +1,5 @@
 $primary-color: #272727;
-$lorem-color: #4c9f6b;
+$lorem-color: #acd8bc;
 $branding-padding: 80px 10px 150px 80px; /* top right bottom left*/
 $main-nav-li-padding: 3px 10px 0 10px;
 $lorem-padding: 50px 25px 0px 25px;
@@ -12,10 +12,21 @@ $font-weights: (
 );
 $font-size: (
     "big": 32px,
-    "medium": 28px,
-    "normal": 20px,
+    "medium": 24px,
     "small": 16px
 );
+
+#lorem h1{
+    background-color: rgb(43, 145, 228);
+}
+
+#ipsum h1{
+    background-color: rgb(230, 174, 102);
+}
+
+#dolor h1{
+    background-color: rgb(205, 157, 236);
+}
 
 
 @media only screen and (min-width: 1024px){
@@ -30,7 +41,7 @@ $font-size: (
     #branding{
         float: left;
         width: 50%;
-        background-color: pink;
+        background-color: white;
     }
 
     #branding h1{
@@ -50,7 +61,7 @@ $font-size: (
         float: left;
         width: 50%;
         padding-top: 12px;
-        background-color: plum;
+        background-color: white;
     }
 
     #main-nav ul{
@@ -92,14 +103,22 @@ $font-size: (
         background-color: $lorem-color;
         float: left;
         padding: $lorem-padding;
-        border-style: solid;
+        border: 3px solid black;
+        position: relative;
     }
 
     .title{
-        background-color: yellow;
-        padding: 1%;
-        width: 100%;
-        position: sticky;
+        position: absolute;
+        border-bottom: 3px solid black;
+        border-left: 3px solid black;
+        margin: 0;
+        top:0;
+        right: 0;
+        width: 50%;
+	    height: 5%;
+        text-align: center;
+        padding: 3%;
+	    font-size: 24px;
     } 
 
     #footer{
@@ -153,10 +172,11 @@ $font-size: (
 
     #main-content{
         padding: 1%;
-	    display: grid;
-        grid-template-columns: 50% 50%;
+        display: grid;
+        margin: 0 2% 8% 2%;
+        grid-template-columns: 49% 49%;
         grid-template-rows: 45% 45%;
-	    grid-gap: 1px 1px;
+	    grid-gap: 3% 3%;
     }
 
     #main-content>div:nth-child(1){

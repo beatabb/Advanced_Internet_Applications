@@ -1,4 +1,16 @@
 /* top right bottom left*/
+#lorem h1 {
+  background-color: #2b91e4;
+}
+
+#ipsum h1 {
+  background-color: #e6ae66;
+}
+
+#dolor h1 {
+  background-color: #cd9dec;
+}
+
 @media only screen and (min-width: 1024px) {
   html, body {
     margin: 0;
@@ -9,7 +21,7 @@
   #branding {
     float: left;
     width: 50%;
-    background-color: pink;
+    background-color: white;
   }
   #branding h1 {
     font-size: 32px;
@@ -26,7 +38,7 @@
     float: left;
     width: 50%;
     padding-top: 12px;
-    background-color: plum;
+    background-color: white;
   }
   #main-nav ul {
     float: right;
@@ -62,22 +74,29 @@
   }
   .lorem_ipsum {
     color: #272727;
-    background-color: #4c9f6b;
+    background-color: #acd8bc;
     float: left;
     padding: 50px 25px 0px 25px;
-    border-style: solid;
+    border: 3px solid black;
+    position: relative;
   }
   .title {
-    background-color: yellow;
-    padding: 1%;
-    width: 100%;
-    position: -webkit-sticky;
-    position: sticky;
+    position: absolute;
+    border-bottom: 3px solid black;
+    border-left: 3px solid black;
+    margin: 0;
+    top: 0;
+    right: 0;
+    width: 50%;
+    height: 5%;
+    text-align: center;
+    padding: 3%;
+    font-size: 24px;
   }
   #footer {
     clear: both;
     height: 150px;
-    background-color: #4c9f6b;
+    background-color: #acd8bc;
     font-size: 16px;
     text-align: center;
     vertical-align: middle;
@@ -103,7 +122,7 @@
     width: 80%;
   }
   #branding h1 {
-    font-size: 28px;
+    font-size: 24px;
     padding: 80px 10px 150px 80px;
     color: #272727;
     margin: 0;
@@ -120,11 +139,12 @@
     padding: 1%;
     display: -ms-grid;
     display: grid;
-    -ms-grid-columns: 50% 50%;
-        grid-template-columns: 50% 50%;
+    margin: 0 2% 8% 2%;
+    -ms-grid-columns: 49% 49%;
+        grid-template-columns: 49% 49%;
     -ms-grid-rows: 45% 45%;
         grid-template-rows: 45% 45%;
-    grid-gap: 1px 1px;
+    grid-gap: 3% 3%;
   }
   #main-content > div:nth-child(1) {
     grid-column: span 2;
@@ -142,21 +162,21 @@
     display: -ms-grid;
     display: grid;
     color: #272727;
-    background-color: #4c9f6b;
+    background-color: #acd8bc;
     border-style: solid;
   }
   #ipsum, #dolor {
     display: -ms-grid;
     display: grid;
     color: #272727;
-    background-color: #4c9f6b;
+    background-color: #acd8bc;
     border-style: solid;
     grid-column: span 6;
   }
   #footer {
     clear: both;
     height: 150px;
-    background-color: #4c9f6b;
+    background-color: #acd8bc;
     font-size: 16px;
     text-align: center;
     vertical-align: middle;
@@ -177,7 +197,7 @@
     height: 100%;
     margin: 10%;
     color: #272727;
-    background-color: #4c9f6b;
+    background-color: #acd8bc;
     padding: 2% 1% 2% 1%;
     margin-bottom: 5%;
     border-style: solid;
@@ -185,7 +205,7 @@
   #footer {
     clear: both;
     height: 150px;
-    background-color: #4c9f6b;
+    background-color: #acd8bc;
     font-size: 16px;
     text-align: center;
     vertical-align: middle;
