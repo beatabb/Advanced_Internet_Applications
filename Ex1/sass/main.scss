@@ -125,7 +125,7 @@ img{
     height: 5%;
     text-align: center;
     padding: 3%;
-    font-size: 24px;
+    font-size: map-get($font-size, medium );
 } 
 
 #footer{
@@ -147,7 +147,7 @@ img{
 }
 
 /* Desktop */
-@media only screen and (min-width: 1024px){
+@media only screen and (min-width: 1025px){
 
     img{
         height: 15%;
@@ -212,7 +212,7 @@ img{
 }
 
 /* Tablet */
-@media only screen and (min-width: 768px) and (max-width: 1023px){
+@media only screen and (min-width: 600px) and (max-width: 1024px){
     
     #branding{
         width: 80%;
@@ -272,7 +272,7 @@ img{
 }
 
 /* Mobile */
-@media only screen and (max-width: 767px){
+@media only screen and (max-width: 599px){
 
     #branding h1{
         display: none;
