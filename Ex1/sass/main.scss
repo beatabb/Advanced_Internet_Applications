@@ -226,6 +226,13 @@ img{
         display: none;
     }
 
+    #menu-nav img{
+        top: 0;
+        right: 0;
+        float: right;
+        margin-right: 3%;
+    }
+
     #main-content{
         padding: 1%;
         display: grid;
