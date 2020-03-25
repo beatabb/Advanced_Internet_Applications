@@ -283,10 +283,22 @@ img{
         display: none;
     }
 
+    #menu-nav{
+        height: 50%;
+        width: 60%;
+    }
+
+    #menu-nav img{
+        top: 0;
+        right: 0;
+        float: right;
+        margin-top: 0;
+    }
+
     .lorem_ipsum{
         width: 80%;
         height: 100%;
-        margin: 5%;
+        margin: 5% 0;
         color: $primary-color;
         background-color: $content-color;
         padding: $lorem-padding;

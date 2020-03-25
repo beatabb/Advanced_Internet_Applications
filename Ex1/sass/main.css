@@ -250,10 +250,20 @@ img {
   #main-nav {
     display: none;
   }
+  #menu-nav {
+    height: 50%;
+    width: 60%;
+  }
+  #menu-nav img {
+    top: 0;
+    right: 0;
+    float: right;
+    margin-top: 0;
+  }
   .lorem_ipsum {
     width: 80%;
     height: 100%;
-    margin: 5%;
+    margin: 5% 0;
     color: #272727;
     background-color: #acd8bc;
     padding: 60px 25px 0px 25px;
