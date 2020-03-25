@@ -41,16 +41,26 @@
     color: #272727;
   }
   #main-content {
-    width: 100%;
-    height: auto;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    margin: 0 2% 0 2%;
+    margin: 0 5% 10% 5%;
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 30% 30% 30%;
+        grid-template-columns: 30% 30% 30%;
+    grid-gap: 5%;
+  }
+  #main-content > div:nth-child(1) {
+    grid-column: span 1;
+    background-color: 0;
+  }
+  #main-content > div:nth-child(2) {
+    grid-column: span 1;
+    background-color: 0;
+  }
+  #main-content > div:nth-child(3) {
+    grid-column: span 1;
+    background-color: 0;
   }
   .lorem_ipsum {
-    width: 30%;
-    margin: 0 2% 5% 2%;
     color: #272727;
     background-color: #4c9f6b;
     float: left;

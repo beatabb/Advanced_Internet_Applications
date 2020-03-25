@@ -68,15 +68,26 @@ $font-size: (
     }
 
     #main-content{
-        width: 100%;
-        height: auto;
-        display: flex;
-        margin: 0 2% 0 2%;
+        margin: 0 5% 10% 5%;
+	    display: grid;
+        grid-template-columns: 30% 30% 30%;
+	    grid-gap: 5%;
+    }
+
+    #main-content>div:nth-child(1){
+        grid-column: span 1;
+        background-color: red($color: #000000);
+    }
+    #main-content>div:nth-child(2){
+        grid-column: span 1;
+        background-color: green($color: #000000);
+    }
+    #main-content>div:nth-child(3){
+        grid-column: span 1;
+        background-color: blue($color: #000000);
     }
     
     .lorem_ipsum{
-        width: 30%;
-        margin: 0 2% 5% 2%;
         color: $primary-color;
         background-color: $lorem-color;
         float: left;
@@ -160,6 +171,7 @@ $font-size: (
         grid-column: span 1;
         background-color: blue($color: #000000);
     }
+
     #lorem{
         display: grid;
         
