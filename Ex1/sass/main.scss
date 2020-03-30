@@ -30,15 +30,13 @@ html, body {
 .container{
     margin: 0 auto;
     overflow: hidden;
-    display: grid;
 }
 
 img{
-    height: 30%;
-    width: 30%;
+    float: left;
+    height: 15%;
+    width: 15%;
     padding: 10% 5% 10% 10%;
-    top:0;
-    left:0;
 }
 
 #branding{
@@ -93,6 +91,10 @@ img{
 #menu-nav > img {
     height: 30%;
     width: 30%;
+}
+
+#main-content{
+    display: grid;
 }
 
 #lorem h1{
@@ -176,7 +178,7 @@ img{
         float: left;
         width: 50%;
         padding-top: 12px;
-        background-color: red;
+        background-color: white;
     }
 
     #main-nav ul{
@@ -211,6 +213,11 @@ img{
     #main-content>div:nth-child(3){
         grid-column: span 1;
         background-color: blue($color: #000000);
+    }
+
+    #footer{
+        grid-column-start: 1;
+        grid-column-end: 4;
     }
 
 }
@@ -273,6 +280,11 @@ img{
         background-color: $content-color;
         border-style: solid;
     }
+
+    #footer{
+        grid-column-start: 1;
+        grid-column-end: 3;
+    }
 }
 
 /* Mobile */
@@ -323,5 +335,10 @@ img{
         background-color: $content-color;
         padding: $lorem-padding;
         border-style: solid;
+    }
+
+    #footer{
+        grid-column-start: 1;
+        grid-column-end: 1;
     }
 }

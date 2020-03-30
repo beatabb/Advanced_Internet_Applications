@@ -10,16 +10,13 @@ html, body {
 .container {
   margin: 0 auto;
   overflow: hidden;
-  display: -ms-grid;
-  display: grid;
 }
 
 img {
-  height: 30%;
-  width: 30%;
+  float: left;
+  height: 15%;
+  width: 15%;
   padding: 10% 5% 10% 10%;
-  top: 0;
-  left: 0;
 }
 
 #branding {
@@ -75,6 +72,11 @@ img {
 #menu-nav > img {
   height: 30%;
   width: 30%;
+}
+
+#main-content {
+  display: -ms-grid;
+  display: grid;
 }
 
 #lorem h1 {
@@ -153,7 +155,7 @@ img {
     float: left;
     width: 50%;
     padding-top: 12px;
-    background-color: red;
+    background-color: white;
   }
   #main-nav ul {
     float: right;
@@ -186,6 +188,11 @@ img {
   #main-content > div:nth-child(3) {
     grid-column: span 1;
     background-color: 0;
+  }
+  #footer {
+    -ms-grid-column: 1;
+        grid-column-start: 1;
+    grid-column-end: 4;
   }
 }
 
@@ -244,6 +251,11 @@ img {
     background-color: #acd8bc;
     border-style: solid;
   }
+  #footer {
+    -ms-grid-column: 1;
+        grid-column-start: 1;
+    grid-column-end: 3;
+  }
 }
 
 /* Mobile */
@@ -285,6 +297,11 @@ img {
     background-color: #acd8bc;
     padding: 60px 25px 0px 25px;
     border-style: solid;
+  }
+  #footer {
+    -ms-grid-column: 1;
+        grid-column-start: 1;
+    grid-column-end: 1;
   }
 }
 /*# sourceMappingURL=main.css.map */
