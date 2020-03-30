@@ -322,14 +322,37 @@ img{
         min-width: 90px;
     }
 
+    #main-content{
+        padding: 1%;
+        display: grid;
+        margin: 0 2% 8% 2%;;
+        grid-template-rows: 30% 30% 30% auto;
+        grid-template-columns: 100%;
+	    grid-gap: 5%;
+    }
+
+    #main-content>div:nth-child(1){
+        grid-row: span 1;
+    }
+    #main-content>div:nth-child(2){
+        grid-row: span 1;
+    }
+    #main-content>div:nth-child(3){
+        grid-row: span 1;
+    }
+    #main-content>div:nth-child(4){
+        grid-row: span 1;
+    }
+
     .lorem_ipsum{
 
         min-width: 100px;
         display: block;
+        overflow: auto;
         margin-left: auto;
         margin-right: auto;
-        margin-bottom: 3%;
-        width: 80%;
+        margin-bottom: 5%;
+        width: 100%;
         height: 100%;
         color: $primary-color;
         background-color: $content-color;
@@ -338,7 +361,7 @@ img{
     }
 
     #footer{
-        grid-column-start: 1;
-        grid-column-end: 1;
+        width: 110%;
+        margin-right: 0;
     }
 }
