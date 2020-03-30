@@ -10,13 +10,16 @@ html, body {
 .container {
   margin: 0 auto;
   overflow: hidden;
+  display: -ms-grid;
+  display: grid;
 }
 
 img {
-  height: 13%;
-  width: 13%;
+  height: 30%;
+  width: 30%;
   padding: 10% 5% 10% 10%;
-  float: left;
+  top: 0;
+  left: 0;
 }
 
 #branding {
@@ -110,15 +113,15 @@ img {
 }
 
 #footer {
+  min-width: 150px;
   position: -webkit-sticky;
   position: sticky;
   clear: both;
-  height: 150px;
   background-color: #acd8bc;
   font-size: 16px;
   text-align: center;
   vertical-align: middle;
-  padding-top: 5%;
+  padding: 3%;
   border-style: solid;
 }
 
@@ -129,7 +132,7 @@ img {
 }
 
 /* Desktop */
-@media only screen and (min-width: 1024px) {
+@media only screen and (min-width: 1025px) {
   img {
     height: 15%;
     width: 15%;
@@ -138,6 +141,7 @@ img {
   }
   #branding {
     width: 50%;
+    max-height: 500px;
   }
   .container {
     width: 100%;
@@ -149,7 +153,7 @@ img {
     float: left;
     width: 50%;
     padding-top: 12px;
-    background-color: white;
+    background-color: red;
   }
   #main-nav ul {
     float: right;
@@ -164,7 +168,7 @@ img {
     color: #272727;
   }
   #main-content {
-    margin: 0 5% 10% 5%;
+    margin: 0 5% 5% 5%;
     display: -ms-grid;
     display: grid;
     -ms-grid-columns: 30% 30% 30%;
@@ -186,7 +190,7 @@ img {
 }
 
 /* Tablet */
-@media only screen and (min-width: 768px) and (max-width: 1023px) {
+@media only screen and (min-width: 600px) and (max-width: 1024px) {
   #branding {
     width: 80%;
   }
@@ -243,7 +247,7 @@ img {
 }
 
 /* Mobile */
-@media only screen and (max-width: 767px) {
+@media only screen and (max-width: 599px) {
   #branding h1 {
     display: none;
   }
@@ -267,8 +271,10 @@ img {
   }
   .title {
     height: 35px;
+    min-width: 90px;
   }
   .lorem_ipsum {
+    min-width: 100px;
     display: block;
     margin-left: auto;
     margin-right: auto;
