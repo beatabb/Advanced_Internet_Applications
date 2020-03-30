@@ -116,13 +116,10 @@ img {
 
 #footer {
   min-width: 150px;
-  position: -webkit-sticky;
-  position: sticky;
   clear: both;
   background-color: #acd8bc;
   font-size: 16px;
   text-align: center;
-  vertical-align: middle;
   padding: 3%;
   border-style: solid;
 }
@@ -135,12 +132,6 @@ img {
 
 /* Desktop */
 @media only screen and (min-width: 1025px) {
-  img {
-    height: 15%;
-    width: 15%;
-    padding: 10% 5% 10% 10%;
-    float: left;
-  }
   #branding {
     width: 50%;
     max-height: 500px;
@@ -171,23 +162,18 @@ img {
   }
   #main-content {
     margin: 0 5% 5% 5%;
-    display: -ms-grid;
-    display: grid;
     -ms-grid-columns: 30% 30% 30%;
         grid-template-columns: 30% 30% 30%;
     grid-gap: 5%;
   }
   #main-content > div:nth-child(1) {
     grid-column: span 1;
-    background-color: 0;
   }
   #main-content > div:nth-child(2) {
     grid-column: span 1;
-    background-color: 0;
   }
   #main-content > div:nth-child(3) {
     grid-column: span 1;
-    background-color: 0;
   }
   #footer {
     -ms-grid-column: 1;
@@ -226,15 +212,12 @@ img {
   }
   #main-content > div:nth-child(1) {
     grid-column: span 2;
-    background-color: 0;
   }
   #main-content > div:nth-child(2) {
     grid-column: span 1;
-    background-color: 0;
   }
   #main-content > div:nth-child(3) {
     grid-column: span 1;
-    background-color: 0;
   }
   #lorem {
     display: -ms-grid;
@@ -278,7 +261,7 @@ img {
     float: right;
   }
   #main-content {
-    width: 80%;
+    width: 100%;
     margin: 0 auto;
   }
   .title {
@@ -323,8 +306,9 @@ img {
     border-style: solid;
   }
   #footer {
-    width: 110%;
-    margin-right: 0;
+    display: block;
+    width: 100%;
+    padding: 3% 25px 3% 25px;
   }
 }
 /*# sourceMappingURL=main.css.map */

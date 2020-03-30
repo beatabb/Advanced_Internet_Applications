@@ -7,6 +7,7 @@ $hover-color: #777777;
 $branding-padding: 15% 0 150px 0; /* top right bottom left*/
 $main-nav-li-padding: 3px 10px 0 10px;
 $lorem-padding: 60px 25px 0px 25px;
+$footer-padding: 3% 25px 3% 25px;
 
 $font-weights: (
     "regular": 400,
@@ -56,7 +57,7 @@ img{
 }
 
 #menu-nav{
-    display: block;
+    display: block; 
     position: fixed;
     height: auto;
     right: 0;
@@ -135,12 +136,10 @@ img{
 #footer{
 
     min-width: 150px;
-    position: sticky;
     clear: both;
     background-color: $content-color;
     font-size: map-get($font-size, small );
     text-align: center;
-    vertical-align: middle;
     padding: 3%;
     border-style: solid;
 }
@@ -153,13 +152,6 @@ img{
 
 /* Desktop */
 @media only screen and (min-width: 1025px){
-
-    img{
-        height: 15%;
-        width: 15%;
-        padding: 10% 5% 10% 10%;
-        float: left;
-    }
 
     #branding{
         width: 50%;
@@ -197,22 +189,18 @@ img{
 
     #main-content{
         margin: 0 5% 5% 5%;
-	    display: grid;
         grid-template-columns: 30% 30% 30%;
 	    grid-gap: 5%;
     }
 
     #main-content>div:nth-child(1){
         grid-column: span 1;
-        background-color: red($color: #000000);
     }
     #main-content>div:nth-child(2){
         grid-column: span 1;
-        background-color: green($color: #000000);
     }
     #main-content>div:nth-child(3){
         grid-column: span 1;
-        background-color: blue($color: #000000);
     }
 
     #footer{
@@ -255,15 +243,12 @@ img{
 
     #main-content>div:nth-child(1){
         grid-column: span 2;
-        background-color: red($color: #000000);
     }
     #main-content>div:nth-child(2){
         grid-column: span 1;
-        background-color: green($color: #000000);
     }
     #main-content>div:nth-child(3){
         grid-column: span 1;
-        background-color: blue($color: #000000);
     }
 
     #lorem{
@@ -313,7 +298,7 @@ img{
     }
 
     #main-content{
-        width: 80%;
+        width: 100%;
         margin: 0 auto;
     }
 
@@ -361,7 +346,9 @@ img{
     }
 
     #footer{
-        width: 110%;
-        margin-right: 0;
+        display: block;
+        width: 100%;
+        padding: $footer-padding;
     }
 }
+
