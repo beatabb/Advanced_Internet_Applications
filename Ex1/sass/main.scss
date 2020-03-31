@@ -188,24 +188,34 @@ img{
     }
 
     #main-content{
-        margin: 0 5% 5% 5%;
-        grid-template-columns: 30% 30% 30%;
-	    grid-gap: 5%;
+        margin: 0;
+        grid-template-columns: 33.3% 33.4% 33.3%;
+	    grid-gap: 0;
+    }
+
+    .title{
+        max-height: 40px;
     }
 
     #main-content>div:nth-child(1){
         grid-column: span 1;
+        margin: 0 4% 0 8%;
     }
     #main-content>div:nth-child(2){
         grid-column: span 1;
+        margin: 0 4%;
     }
     #main-content>div:nth-child(3){
         grid-column: span 1;
+        margin: 0 8% 0 4%;
     }
 
     #footer{
+        margin-top: 5%;
         grid-column-start: 1;
         grid-column-end: 4;
+        max-height: 40px;
+
     }
 
 }
@@ -218,7 +228,7 @@ img{
     }
     
     .container{
-        width: 98%;
+        width: 100%;
     }
 
     #main-nav{
@@ -233,22 +243,24 @@ img{
     }
 
     #main-content{
-        padding: 1%;
         display: grid;
-        margin: 0 2% 8% 2%;
-        grid-template-columns: 49% 49%;
-        grid-template-rows: 45% 45%;
-	    grid-gap: 3% 3%;
+        margin: 0;
+        grid-template-columns: 50% 50%;
+        grid-template-rows: 50% 50%;
+	    grid-gap: 0;
     }
 
     #main-content>div:nth-child(1){
         grid-column: span 2;
+        margin: 2%;
     }
     #main-content>div:nth-child(2){
         grid-column: span 1;
+        margin: 0 2% 0 4%;
     }
     #main-content>div:nth-child(3){
         grid-column: span 1;
+        margin: 0 4% 0 2%;
     }
 
     #lorem{
@@ -266,7 +278,12 @@ img{
         border-style: solid;
     }
 
+    .title{
+        max-height: 40px;
+    }
+
     #footer{
+        margin-top: 2%;
         grid-column-start: 1;
         grid-column-end: 3;
     }
@@ -284,7 +301,7 @@ img{
     }
 
     .container{
-        width: 98%;
+        width: 80%;
     }
 
     #main-nav{
@@ -298,8 +315,8 @@ img{
     }
 
     #main-content{
-        width: 80%;
-        margin: 0 auto;
+        width: 98%;
+        margin: 0;
     }
 
     .title{
@@ -308,12 +325,10 @@ img{
     }
 
     #main-content{
-        padding: 1%;
         display: grid;
-        margin: 0 2% 8% 2%;;
+        margin: 0;
         grid-template-rows: 30% 30% 30% auto;
         grid-template-columns: 100%;
-	    grid-gap: 5%;
     }
 
     #main-content>div:nth-child(1){

@@ -161,24 +161,32 @@ img {
     color: #272727;
   }
   #main-content {
-    margin: 0 5% 5% 5%;
-    -ms-grid-columns: 30% 30% 30%;
-        grid-template-columns: 30% 30% 30%;
-    grid-gap: 5%;
+    margin: 0;
+    -ms-grid-columns: 33.3% 33.4% 33.3%;
+        grid-template-columns: 33.3% 33.4% 33.3%;
+    grid-gap: 0;
+  }
+  .title {
+    max-height: 40px;
   }
   #main-content > div:nth-child(1) {
     grid-column: span 1;
+    margin: 0 4% 0 8%;
   }
   #main-content > div:nth-child(2) {
     grid-column: span 1;
+    margin: 0 4%;
   }
   #main-content > div:nth-child(3) {
     grid-column: span 1;
+    margin: 0 8% 0 4%;
   }
   #footer {
+    margin-top: 5%;
     -ms-grid-column: 1;
         grid-column-start: 1;
     grid-column-end: 4;
+    max-height: 40px;
   }
 }
 
@@ -188,7 +196,7 @@ img {
     width: 80%;
   }
   .container {
-    width: 98%;
+    width: 100%;
   }
   #main-nav {
     display: none;
@@ -200,24 +208,26 @@ img {
     margin-right: 3%;
   }
   #main-content {
-    padding: 1%;
     display: -ms-grid;
     display: grid;
-    margin: 0 2% 8% 2%;
-    -ms-grid-columns: 49% 49%;
-        grid-template-columns: 49% 49%;
-    -ms-grid-rows: 45% 45%;
-        grid-template-rows: 45% 45%;
-    grid-gap: 3% 3%;
+    margin: 0;
+    -ms-grid-columns: 50% 50%;
+        grid-template-columns: 50% 50%;
+    -ms-grid-rows: 50% 50%;
+        grid-template-rows: 50% 50%;
+    grid-gap: 0;
   }
   #main-content > div:nth-child(1) {
     grid-column: span 2;
+    margin: 2%;
   }
   #main-content > div:nth-child(2) {
     grid-column: span 1;
+    margin: 0 2% 0 4%;
   }
   #main-content > div:nth-child(3) {
     grid-column: span 1;
+    margin: 0 4% 0 2%;
   }
   #lorem {
     display: -ms-grid;
@@ -234,7 +244,11 @@ img {
     background-color: #acd8bc;
     border-style: solid;
   }
+  .title {
+    max-height: 40px;
+  }
   #footer {
+    margin-top: 2%;
     -ms-grid-column: 1;
         grid-column-start: 1;
     grid-column-end: 3;
@@ -250,7 +264,7 @@ img {
     width: 100%;
   }
   .container {
-    width: 98%;
+    width: 80%;
   }
   #main-nav {
     display: none;
@@ -261,23 +275,21 @@ img {
     float: right;
   }
   #main-content {
-    width: 80%;
-    margin: 0 auto;
+    width: 98%;
+    margin: 0;
   }
   .title {
     height: 35px;
     min-width: 90px;
   }
   #main-content {
-    padding: 1%;
     display: -ms-grid;
     display: grid;
-    margin: 0 2% 8% 2%;
+    margin: 0;
     -ms-grid-rows: 30% 30% 30% auto;
         grid-template-rows: 30% 30% 30% auto;
     -ms-grid-columns: 100%;
         grid-template-columns: 100%;
-    grid-gap: 5%;
   }
   #main-content > div:nth-child(1) {
     grid-row: span 1;
