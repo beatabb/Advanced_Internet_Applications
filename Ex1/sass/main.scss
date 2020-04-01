@@ -8,9 +8,9 @@ $title-height: 5%;
 $branding-padding: 15% 0 150px 0; /* top right bottom left*/
 $main-nav-li-padding: 2% 0;
 $main-nav-margin: 10px 0 auto auto; 
-$lorem-padding: 6% 2%;
-$footer-padding: 3% 25px 3% 25px;
-$img-padding: 5%;
+$lorem-padding: 4% 2%;
+$footer-padding: 15px 25px;
+$img-padding: 10% 5%;
 $title-padding: $title-height;
 $title-margin: auto;
 $main-content-paddig: 2vw auto 40px auto;
@@ -49,8 +49,8 @@ header{
 
 img{
     float: left;
-    height: 10%;
-    width: 10%;
+    height: 30%;
+    width: 20%;
     padding: $img-padding;
 }
 
@@ -78,12 +78,16 @@ img{
     background-color: $content-color;
     display: flex;
     justify-content: center;
-    margin-top: auto;
+    font-size: map-get($font-size, small );
+    text-align: center;
+    padding: 3%;
     flex-shrink: 0;
+    max-height: 200px;
+    margin-top: auto;
 }
 
 #footer h1{
-    margin: auto;
+    
     padding: $footer-padding;
     font-weight: map-get($font-weights, bold );
     font-size: map-get($font-size, small );
@@ -130,6 +134,7 @@ img{
     justify-content: center;
     display: flex;
     border-width: 3px;
+    max-height: 20px;
     top: 0;
     right: 0;
     margin: $title-margin;
