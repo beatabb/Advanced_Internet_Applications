@@ -212,4 +212,17 @@ img {
 }
 
 /* Mobile */
+@media only screen and (max-width: 599px) {
+  #branding {
+    width: 85%;
+  }
+  #main-nav,
+  #branding h1 {
+    display: none;
+  }
+  .lorem_ipsum {
+    width: 95%;
+    margin: 2.5% 5%;
+  }
+}
 /*# sourceMappingURL=main.css.map */
