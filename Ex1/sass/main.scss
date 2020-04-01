@@ -6,7 +6,7 @@ $dolor-color: rgb(205, 157, 236);
 $hover-color: #777777;
 $branding-padding: 15% 0 150px 0; /* top right bottom left*/
 $main-nav-li-padding: 3px 10px 0 10px;
-$lorem-padding: 60px 25px 0px 25px;
+$lorem-padding: 10% 5% 0px 5%;
 $footer-padding: 3% 25px 3% 25px;
 
 $font-weights: (
@@ -28,16 +28,19 @@ html, body {
     width: 100%;
 }
 
-.container{
-    margin: 0 auto;
-    overflow: hidden;
-}
-
 img{
     float: left;
     height: 15%;
     width: 15%;
     padding: 10% 5% 10% 10%;
+}
+
+body{
+    min-height: 100%;
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
 }
 
 #branding{
@@ -95,7 +98,9 @@ img{
 }
 
 #main-content{
+
     display: grid;
+    flex: 1 0 auto;
 }
 
 #lorem h1{
@@ -117,6 +122,7 @@ img{
     padding: $lorem-padding;
     border: 3px solid black;
     position: relative;
+    
 }
 
 .title{
@@ -142,6 +148,10 @@ img{
     text-align: center;
     padding: 3%;
     border-style: solid;
+
+    flex-shrink: 0;
+    
+    
 }
 
 #footer h1{
@@ -158,9 +168,7 @@ img{
         max-height: 500px;
     }
 
-    .container{
-        width: 100%;
-    }
+    
 
     #menu-nav{
         display: none;
@@ -225,10 +233,6 @@ img{
     
     #branding{
         width: 80%;
-    }
-    
-    .container{
-        width: 100%;
     }
 
     #main-nav{
@@ -300,7 +304,7 @@ img{
         width: 100%;
     }
 
-    .container{
+    body{
         width: 80%;
     }
 

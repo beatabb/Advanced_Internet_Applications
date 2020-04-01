@@ -7,16 +7,24 @@ html, body {
   width: 100%;
 }
 
-.container {
-  margin: 0 auto;
-  overflow: hidden;
-}
-
 img {
   float: left;
   height: 15%;
   width: 15%;
   padding: 10% 5% 10% 10%;
+}
+
+body {
+  min-height: 100%;
+  width: 100%;
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 #branding {
@@ -77,6 +85,9 @@ img {
 #main-content {
   display: -ms-grid;
   display: grid;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 0 auto;
+          flex: 1 0 auto;
 }
 
 #lorem h1 {
@@ -95,7 +106,7 @@ img {
   color: #272727;
   background-color: #acd8bc;
   float: left;
-  padding: 60px 25px 0px 25px;
+  padding: 10% 5% 0px 5%;
   border: 3px solid black;
   position: relative;
 }
@@ -122,6 +133,8 @@ img {
   text-align: center;
   padding: 3%;
   border-style: solid;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
 }
 
 #footer h1 {
@@ -135,9 +148,6 @@ img {
   #branding {
     width: 50%;
     max-height: 500px;
-  }
-  .container {
-    width: 100%;
   }
   #menu-nav {
     display: none;
@@ -194,9 +204,6 @@ img {
 @media only screen and (min-width: 600px) and (max-width: 1024px) {
   #branding {
     width: 80%;
-  }
-  .container {
-    width: 100%;
   }
   #main-nav {
     display: none;
@@ -263,7 +270,7 @@ img {
   #branding {
     width: 100%;
   }
-  .container {
+  body {
     width: 80%;
   }
   #main-nav {
@@ -316,7 +323,7 @@ img {
     margin-bottom: 5%;
     color: #272727;
     background-color: #acd8bc;
-    padding: 60px 25px 0px 25px;
+    padding: 10% 5% 0px 5%;
     border-style: solid;
   }
   #footer {
