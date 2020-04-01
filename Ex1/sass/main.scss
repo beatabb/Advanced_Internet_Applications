@@ -4,13 +4,14 @@ $lorem-color: rgb(43, 145, 228);
 $ipsum-color: rgb(230, 174, 102);
 $dolor-color: rgb(205, 157, 236);
 $hover-color: #777777;
+$title-height: 5%;
 $branding-padding: 15% 0 150px 0; /* top right bottom left*/
-$main-nav-li-padding: 3px 10px 0 10px;
+$main-nav-li-padding: 2% 0;
 $main-nav-margin: 10px 0 auto auto; 
-$lorem-padding: 60px 25px 0px 25px;
+$lorem-padding: 6% 2%;
 $footer-padding: 3% 25px 3% 25px;
 $img-padding: 5%;
-$title-padding: 3%;
+$title-padding: $title-height;
 $title-margin: auto;
 $main-content-paddig: 2vw auto 40px auto;
 $main-content-margin: 10px auto 100px auto;
@@ -28,7 +29,7 @@ $font-size: (
 
 /* General */
 html, body {
-    margin: 0;
+    margin: 0 !important;
     padding: 0;
     height: 100%;
     width: 100%;
@@ -37,7 +38,7 @@ html, body {
 body{
     min-height: 100%;
     width: 100%;
-    margin: 0 auto;
+    margin: 0;
     display: flex;
     flex-direction: column;
 }
@@ -84,11 +85,35 @@ img{
 #footer h1{
     margin: auto;
     padding: $footer-padding;
+    font-weight: map-get($font-weights, bold );
+    font-size: map-get($font-size, small );
+    vertical-align: middle;
 }
 
 #main-nav{
     display: flex;
     margin: $main-nav-margin;
+    float: right;
+    width: 50%;
+    padding-top: 12px;
+    justify-content: space-evenly;
+}
+
+#main-nav ul{
+    float: right;
+    
+}
+
+#main-nav li{
+    float: left;
+    padding: $main-nav-li-padding;
+    margin: 0;
+    font-size: map-get($font-size, small );
+    font-weight: map-get($font-weights, bold );
+    list-style: none;
+    color: $primary-color;
+    text-align: center;
+    margin: 15px;
 }
 
 #menu-nav{
@@ -116,7 +141,7 @@ img{
 .lorem_ipsum{
     text-align: justify;
     background-color: $content-color;
-    padding-top: 2%;
+    padding: $lorem-padding;
     position: relative;
 }
 
@@ -147,7 +172,7 @@ img{
 @media only screen and (min-width: 1025px){
 
     .lorem_ipsum{
-        width: 31%;
+        width: 28%;
     }
     
 }

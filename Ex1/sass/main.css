@@ -1,7 +1,7 @@
 /* top right bottom left*/
 /* General */
 html, body {
-  margin: 0;
+  margin: 0 !important;
   padding: 0;
   height: 100%;
   width: 100%;
@@ -10,7 +10,7 @@ html, body {
 body {
   min-height: 100%;
   width: 100%;
-  margin: 0 auto;
+  margin: 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -71,6 +71,9 @@ img {
 #footer h1 {
   margin: auto;
   padding: 3% 25px 3% 25px;
+  font-weight: 700;
+  font-size: 16px;
+  vertical-align: middle;
 }
 
 #main-nav {
@@ -78,6 +81,28 @@ img {
   display: -ms-flexbox;
   display: flex;
   margin: 10px 0 auto auto;
+  float: right;
+  width: 50%;
+  padding-top: 12px;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+#main-nav ul {
+  float: right;
+}
+
+#main-nav li {
+  float: left;
+  padding: 2% 0;
+  margin: 0;
+  font-size: 16px;
+  font-weight: 700;
+  list-style: none;
+  color: #272727;
+  text-align: center;
+  margin: 15px;
 }
 
 #menu-nav {
@@ -87,7 +112,7 @@ img {
 .title {
   height: 5%;
   font-size: 24px;
-  padding: 3%;
+  padding: 5%;
   width: 55%;
   border-bottom: 3px solid black;
   border-left: 3px solid black;
@@ -108,7 +133,7 @@ img {
 .lorem_ipsum {
   text-align: justify;
   background-color: #acd8bc;
-  padding-top: 2%;
+  padding: 6% 2%;
   position: relative;
 }
 
@@ -140,7 +165,7 @@ img {
 /* Desktop */
 @media only screen and (min-width: 1025px) {
   .lorem_ipsum {
-    width: 31%;
+    width: 28%;
   }
 }
 
