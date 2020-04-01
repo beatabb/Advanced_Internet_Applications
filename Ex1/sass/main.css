@@ -105,10 +105,11 @@ body {
 .lorem_ipsum {
   color: #272727;
   background-color: #acd8bc;
-  float: left;
-  padding: 10% 5% 0px 5%;
+  padding: 15% 5% 0 5%;
   border: 3px solid black;
   position: relative;
+  float: left;
+  height: auto;
 }
 
 .title {
@@ -149,6 +150,9 @@ body {
     width: 50%;
     max-height: 500px;
   }
+  img {
+    margin-bottom: 10%;
+  }
   #menu-nav {
     display: none;
   }
@@ -171,7 +175,7 @@ body {
     color: #272727;
   }
   #main-content {
-    margin: 0;
+    margin: auto;
     -ms-grid-columns: 33.3% 33.4% 33.3%;
         grid-template-columns: 33.3% 33.4% 33.3%;
     grid-gap: 0;
@@ -323,7 +327,7 @@ body {
     margin-bottom: 5%;
     color: #272727;
     background-color: #acd8bc;
-    padding: 10% 5% 0px 5%;
+    padding: 15% 5% 0 5%;
     border-style: solid;
   }
   #footer {
