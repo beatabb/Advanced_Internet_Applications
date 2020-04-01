@@ -26,10 +26,18 @@ header {
   display: flex;
 }
 
+#logo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 5%;
+  padding-top: 7%;
+}
+
 img {
   float: left;
-  height: 30%;
-  width: 20%;
+  height: 80px;
+  width: 80px;
   padding: 10% 5%;
 }
 
@@ -49,6 +57,21 @@ img {
   margin: 0;
 }
 
+#menu-nav > img {
+  position: -webkit-sticky;
+  position: sticky;
+}
+
+#menu-nav {
+  display: block;
+  position: fixed;
+  height: auto;
+  right: 0;
+  top: 0;
+  z-index: 1000;
+  padding: 5% 0;
+}
+
 .lorem_ipsum,
 #footer {
   border: 3px solid black;
@@ -56,25 +79,24 @@ img {
 
 #footer {
   text-align: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   background-color: #acd8bc;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
   font-size: 16px;
-  text-align: center;
-  padding: 3%;
   -ms-flex-negative: 0;
       flex-shrink: 0;
   max-height: 200px;
   margin-top: auto;
+  padding: 30px 0;
 }
 
 #footer h1 {
   padding: 15px 25px;
-  font-weight: 700;
+  font-weight: 400;
   font-size: 16px;
   vertical-align: middle;
 }
@@ -108,14 +130,10 @@ img {
   margin: 15px;
 }
 
-#menu-nav {
-  display: none;
-}
-
 .title {
   height: 5%;
   font-size: 24px;
-  padding: 5%;
+  padding: 25px;
   width: 55%;
   border-bottom: 3px solid black;
   border-left: 3px solid black;
@@ -137,7 +155,7 @@ img {
 .lorem_ipsum {
   text-align: justify;
   background-color: #acd8bc;
-  padding: 4% 2%;
+  padding: 100px 2% 50px 2%;
   position: relative;
 }
 
@@ -171,18 +189,25 @@ img {
   .lorem_ipsum {
     width: 28%;
   }
+  #menu-nav {
+    display: none;
+  }
 }
 
 /* Tablet */
 @media only screen and (min-width: 600px) and (max-width: 1024px) {
+  #branding {
+    width: 85%;
+  }
   #main-nav {
     display: none;
   }
   #lorem {
-    width: 100%;
+    width: 89vw;
+    margin-bottom: 3vw;
   }
   #ipsum, #dolor {
-    width: 47%;
+    width: 41vw;
   }
 }
 

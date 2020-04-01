@@ -4,11 +4,12 @@ $lorem-color: rgb(43, 145, 228);
 $ipsum-color: rgb(230, 174, 102);
 $dolor-color: rgb(205, 157, 236);
 $hover-color: #777777;
-$title-height: 5%;
+$title-height: 25px;
+$margin-tablet: 3vw;
 $branding-padding: 15% 0 150px 0; /* top right bottom left*/
 $main-nav-li-padding: 2% 0;
 $main-nav-margin: 10px 0 auto auto; 
-$lorem-padding: 4% 2%;
+$lorem-padding: 100px 2% 50px 2%;
 $footer-padding: 15px 25px;
 $img-padding: 10% 5%;
 $title-padding: $title-height;
@@ -47,10 +48,16 @@ header{
     display: flex;
 }
 
+#logo{
+    display: flex;
+    padding: 5%;
+    padding-top: 7%;
+}
+
 img{
     float: left;
-    height: 30%;
-    width: 20%;
+    height: 80px;
+    width: 80px;
     padding: $img-padding;
 }
 
@@ -68,6 +75,21 @@ img{
     margin: 0;
 }
 
+#menu-nav > img{
+    position: sticky;
+}
+
+#menu-nav{
+    display: block; 
+    position: fixed;
+    height: auto;
+    right: 0;
+    top:0;
+    z-index: 1000;
+    padding: 5% 0;
+}
+
+
 .lorem_ipsum, 
 #footer{
     border: 3px solid black;
@@ -75,21 +97,21 @@ img{
 
 #footer{
     text-align: center;
+    justify-content: center;
     background-color: $content-color;
     display: flex;
-    justify-content: center;
     font-size: map-get($font-size, small );
-    text-align: center;
-    padding: 3%;
     flex-shrink: 0;
     max-height: 200px;
     margin-top: auto;
+    padding: 30px 0;
+    
 }
 
 #footer h1{
     
     padding: $footer-padding;
-    font-weight: map-get($font-weights, bold );
+    font-weight: map-get($font-weights, regular );
     font-size: map-get($font-size, small );
     vertical-align: middle;
 }
@@ -118,10 +140,6 @@ img{
     color: $primary-color;
     text-align: center;
     margin: 15px;
-}
-
-#menu-nav{
-    display: none;
 }
 
 .title{
@@ -179,22 +197,32 @@ img{
     .lorem_ipsum{
         width: 28%;
     }
+
+
+    #menu-nav{
+        display: none;
+    }
     
 }
 
 /* Tablet */
 @media only screen and (min-width: 600px) and (max-width: 1024px){
+
+    #branding{
+        width: 85%;
+    }
     
     #main-nav{
         display: none;
     }
 
     #lorem{
-        width: 100%;
+        width: 89vw;
+        margin-bottom: $margin-tablet;
     }
     
     #ipsum, #dolor{
-        width: 47%;
+        width: 41vw;
     }
 }
 
