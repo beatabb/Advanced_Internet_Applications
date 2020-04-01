@@ -6,8 +6,14 @@ $dolor-color: rgb(205, 157, 236);
 $hover-color: #777777;
 $branding-padding: 15% 0 150px 0; /* top right bottom left*/
 $main-nav-li-padding: 3px 10px 0 10px;
-$lorem-padding: 15% 5% 15% 5%;
+$main-nav-margin: 10px 0 auto auto; 
+$lorem-padding: 60px 25px 0px 25px;
 $footer-padding: 3% 25px 3% 25px;
+$img-padding: 5%;
+$title-padding: 3%;
+$title-margin: auto;
+$main-content-paddig: 2vw auto 40px auto;
+$main-content-margin: 10px auto 100px auto;
 
 $font-weights: (
     "regular": 400,
@@ -28,13 +34,6 @@ html, body {
     width: 100%;
 }
 
-img{
-    float: left;
-    height: 15%;
-    width: 15%;
-    padding: 10% 5% 10% 10%;
-}
-
 body{
     min-height: 100%;
     width: 100%;
@@ -43,9 +42,22 @@ body{
     flex-direction: column;
 }
 
+header{
+    display: flex;
+}
+
+img{
+    float: left;
+    height: 10%;
+    width: 10%;
+    padding: $img-padding;
+}
+
 #branding{
     float: left;
     background-color: white;
+    width: 50%;
+    display: flex;
 }
 
 #branding h1{
@@ -55,51 +67,67 @@ body{
     margin: 0;
 }
 
-#menu-nav > img{
-    position: sticky;
+.lorem_ipsum, 
+#footer{
+    border: 3px solid black;
+}
+
+#footer{
+    text-align: center;
+    background-color: $content-color;
+    display: flex;
+    justify-content: center;
+    margin-top: auto;
+    flex-shrink: 0;
+}
+
+#footer h1{
+    margin: auto;
+    padding: $footer-padding;
+}
+
+#main-nav{
+    display: flex;
+    margin: $main-nav-margin;
 }
 
 #menu-nav{
-    display: block; 
-    position: fixed;
-    height: auto;
-    right: 0;
-    top:0;
-    z-index: 1000;
-    padding: 5% 0;
-}
-
-#menu-nav > ul{
     display: none;
 }
 
-#menu-nav:hover > ul{
-    display: block;
-    background-color: white;
+.title{
+    height: 5%;
+    font-size: map-get($font-size, medium );
+    padding: $title-padding;
+    width: 55%;
+    border-bottom: 3px solid black;
+    border-left: 3px solid black;
+    justify-content: center;
+    display: flex;
+    border-width: 3px;
+    top: 0;
+    right: 0;
+    margin: $title-margin;
+    float: right;
+    position: absolute;
+
 }
 
-#menu-nav:hover > ul > li{
-    list-style-type: none;
-    background-color: white;
-    padding: 5%;
-    display: inline-block;
-    line-height: 50%;
-    vertical-align: middle;
-    margin-right: 100%;
-}
-
-#menu-nav:hover > ul > li:hover{
-    color: $hover-color;
-}
-
-#menu-nav > img {
-    height: 30%;
-    width: 30%;
+.lorem_ipsum{
+    text-align: justify;
+    background-color: $content-color;
+    padding-top: 2%;
+    position: relative;
 }
 
 #main-content{
-
-    display: grid;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    margin: $main-content-margin;
+    padding: $main-content-paddig;
+    
+    
 }
 
 #lorem h1{
@@ -114,265 +142,35 @@ body{
     background-color: $dolor-color;
 }
 
-.lorem_ipsum{
-    color: $primary-color;
-    background-color: $content-color;
-    padding: $lorem-padding;
-    border: 3px solid black;
-    position: relative;
-    float: left;
-    margin-bottom: 2%;
-}
-
-.lorem_ipsum p{
-    margin: 5%;
-}
-
-.title{
-    position: absolute;
-    border-bottom: 3px solid black;
-    border-left: 3px solid black;
-    margin: 0;
-    top:0;
-    right: 0;
-    width: 50%;
-    height: 5%;
-    text-align: center;
-    padding: 3%;
-    font-size: map-get($font-size, medium );
-} 
-
-#footer{
-
-    min-width: 150px;
-    clear: both;
-    background-color: $content-color;
-    font-size: map-get($font-size, small );
-    text-align: center;
-    padding: 3%;
-    border-style: solid;
-
-    margin-top: auto;
-    flex-shrink: 0;
-}
-
-#footer h1{
-    font-weight: map-get($font-weights, bold );
-    font-size: map-get($font-size, small );
-    vertical-align: middle;
-}
 
 /* Desktop */
 @media only screen and (min-width: 1025px){
 
-    #branding{
-        width: 50%;
-        max-height: 500px;
+    .lorem_ipsum{
+        width: 31%;
     }
-
-    img{
-        margin-bottom: 10%;
-    }
-
-    #menu-nav{
-        display: none;
-    }
-
-    #main-nav{
-        float: left;
-        width: 50%;
-        padding-top: 12px;
-        background-color: white;
-    }
-
-    #main-nav ul{
-        float: right;
-    }
-
-    #main-nav li{
-        float: left;
-        padding: $main-nav-li-padding;
-        margin: 0 10px;
-        font-size: map-get($font-size, small );
-        font-weight: map-get($font-weights, bold );
-        list-style: none;
-        color: $primary-color;
-    }
-
-    #main-content{
-        margin: auto;
-        grid-template-columns: 33.3% 33.4% 33.3%;
-        grid-gap: 0;
-    }
-
-    .title{
-        max-height: 40px;
-    }
-
-    #main-content>div:nth-child(1){
-        grid-column: span 1;
-        margin: 0 4% 0 8%;
-    }
-    #main-content>div:nth-child(2){
-        grid-column: span 1;
-        margin: 0 4%;
-    }
-    #main-content>div:nth-child(3){
-        grid-column: span 1;
-        margin: 0 8% 0 4%;
-    }
-
-    #footer{
-        margin-top: 5%;
-        grid-column-start: 1;
-        grid-column-end: 4;
-        max-height: 40px;
-
-    }
-
+    
 }
 
 /* Tablet */
 @media only screen and (min-width: 600px) and (max-width: 1024px){
     
-    #branding{
-        width: 80%;
-    }
-
     #main-nav{
         display: none;
     }
 
-    #menu-nav img{
-        top: 0;
-        right: 0;
-        float: right;
-        margin-right: 3%;
-    }
-
-    #main-content{
-        display: grid;
-        margin: 0;
-        grid-template-columns: 50% 50%;
-        grid-template-rows: 50% 50%;
-	    grid-gap: 0;
-    }
-
-    #main-content>div:nth-child(1){
-        grid-column: span 2;
-        margin: 2%;
-    }
-    #main-content>div:nth-child(2){
-        grid-column: span 1;
-        margin: 0 2% 0 4%;
-    }
-    #main-content>div:nth-child(3){
-        grid-column: span 1;
-        margin: 0 4% 0 2%;
-    }
-
     #lorem{
-        display: grid;
-        padding-top: 10%;
-        color: $primary-color;
-        background-color: $content-color;
-        border-style: solid;
-        padding-bottom: 0;
+        width: 100%;
     }
-
+    
     #ipsum, #dolor{
-        display: grid;
-        color: $primary-color;
-        background-color: $content-color;
-        border-style: solid;
-    }
-
-    .title{
-        max-height: 40px;
-    }
-
-    #footer{
-        margin-top: 2%;
-        grid-column-start: 1;
-        grid-column-end: 3;
+        width: 47%;
     }
 }
 
 /* Mobile */
 @media only screen and (max-width: 599px){
 
-    #branding h1{
-        display: none;
-    }
-
-    #branding{
-        width: 100%;
-    }
-
-    body{
-        width: 80%;
-    }
-
-    #main-nav{
-        display: none;
-    }
-
-    #menu-nav img{
-        top: 0;
-        right: 0;
-        float: right;
-    }
-
-    #main-content{
-        width: 98%;
-        margin: 0;
-    }
-
-    .title{
-        height: 35px;
-        min-width: 90px;
-    }
-
-    #main-content{
-        display: grid;
-        margin: 0;
-        grid-template-rows: 30% 30% 30% auto;
-        grid-template-columns: 100%;
-    }
-
-    #main-content>div:nth-child(1){
-        grid-row: span 1;
-        margin: 2.5% 5%;
-    }
-    #main-content>div:nth-child(2){
-        grid-row: span 1;
-        margin: 2.5% 5%;
-    }
-    #main-content>div:nth-child(3){
-        grid-row: span 1;
-        margin: 2.5% 5%;
-    }
-    #main-content>div:nth-child(4){
-        margin-top: 2.5%;
-        grid-row: span 1;
-    }
-
-    .lorem_ipsum{
-
-        min-width: 150px;
-        display: block;
-        overflow: auto;
-        margin-left: auto;
-        margin-right: auto;
-        margin-bottom: 5%;
-        color: $primary-color;
-        background-color: $content-color;
-        padding: $lorem-padding;
-        border-style: solid;
-    }
-
-    #footer{
-        padding: $footer-padding;
-    }
+    
 }
 
