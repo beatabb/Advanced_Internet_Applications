@@ -6,7 +6,7 @@ $dolor-color: rgb(205, 157, 236);
 $hover-color: #777777;
 $branding-padding: 15% 0 150px 0; /* top right bottom left*/
 $main-nav-li-padding: 3px 10px 0 10px;
-$lorem-padding: 15% 5% 0 5%;
+$lorem-padding: 15% 5% 15% 5%;
 $footer-padding: 3% 25px 3% 25px;
 
 $font-weights: (
@@ -100,7 +100,6 @@ body{
 #main-content{
 
     display: grid;
-    flex: 1 0 auto;
 }
 
 #lorem h1{
@@ -122,7 +121,11 @@ body{
     border: 3px solid black;
     position: relative;
     float: left;
-    height: auto;
+    margin-bottom: 2%;
+}
+
+.lorem_ipsum p{
+    margin: 5%;
 }
 
 .title{
@@ -149,9 +152,8 @@ body{
     padding: 3%;
     border-style: solid;
 
+    margin-top: auto;
     flex-shrink: 0;
-    
-    
 }
 
 #footer h1{
@@ -275,6 +277,7 @@ body{
         color: $primary-color;
         background-color: $content-color;
         border-style: solid;
+        padding-bottom: 0;
     }
 
     #ipsum, #dolor{
