@@ -11,13 +11,12 @@ function addRow(){
 
     var tableRef = document.getElementById('myTable').getElementsByTagName('tbody')[0];
     var newRow   = tableRef.insertRow();
-    var author  = newRow.insertCell(0);
-    var title  = newRow.insertCell(1);
-    var third  = newRow.insertCell(2);
+    var authorCell  = newRow.insertCell(0);
+    var titleCell  = newRow.insertCell(1);
+    var thirdCell  = newRow.insertCell(2);
 
-    //var newText  = document.createTextNode('New row');
-    author.append(document.createElement('input'));
-    title.append(document.createElement('input'));
+    authorCell.append(document.createElement('input'));
+    titleCell.append(document.createElement('input'));
 
     var saveButton = document.createElement('button');
     saveButton.innerHTML = "Save";
@@ -25,7 +24,7 @@ function addRow(){
     saveButton.setAttribute('class', 'saveButton');
     saveButton.setAttribute('type', 'button');
 
-    third.appendChild(saveButton);
+    thirdCell.appendChild(saveButton);
 
     var removeButton = document.createElement('button');
     removeButton.innerHTML = "Remove";
@@ -33,19 +32,23 @@ function addRow(){
     removeButton.setAttribute('class', 'removeButton');
     removeButton.setAttribute('type', 'button');
 
-    third.appendChild(removeButton);
+    thirdCell.appendChild(removeButton);
     
 }
 
-function getValue(cell){
+function getValueFromInput(cell){
     return cell.childNodes[0].value;
+}
+
+function getValueFromInner(cell){
+    return cell.childNodes[0].innerHTML;
 }
 
 function deleteValuesFromCell(cell){
 
     while (cell.firstChild) {
         cell.removeChild(cell.lastChild);
-      }
+    }
 }
 
 function setValue(cell, value, type){
@@ -53,6 +56,16 @@ function setValue(cell, value, type){
     let temp = document.createElement(type);
     temp.innerHTML = value;
     cell.appendChild(temp);
+}
+
+function setValueInInput(cell, value){
+    
+    deleteValuesFromCell(cell);
+
+    let temp = document.createElement('input');
+    temp.value = value;
+    cell.append(temp);
+
 }
 
 function setValueButton(cell, buttonClass, buttonOnclick, value){
@@ -76,8 +89,8 @@ function saveRow(button){
     let titleCell = theRow.cells[1];
     let thirdCell = theRow.cells[2];
 
-    let newAuthorValue = getValue(authorCell);
-    let newTitleValue = getValue(titleCell);
+    let newAuthorValue = getValueFromInput(authorCell);
+    let newTitleValue = getValueFromInput(titleCell);
 
     deleteValuesFromCell(authorCell);
     deleteValuesFromCell(titleCell);
@@ -99,15 +112,24 @@ function removeRow(button){
 
 }
 
-function editRow(){
+function editRow(button){
 
     let numb = button.parentNode.parentNode.rowIndex;
-    alert(numb);
 
-}
+    let theTable = document.getElementById("myTable");
+    let theRow = theTable.rows[numb];
+    let authorCell = theRow.cells[0];
+    let titleCell = theRow.cells[1];
+    let thirdCell = theRow.cells[2];
 
-function helloWorld(){
+    let currentAuthorValue = getValueFromInner(authorCell);
+    let currentTitleValue = getValueFromInner(titleCell);
+    deleteValuesFromCell(thirdCell);
 
-    alert( 'Hello, world!' );
-  
+    setValueInInput(authorCell, currentAuthorValue);
+    setValueInInput(titleCell, currentTitleValue);
+
+    setValueButton(thirdCell, 'saveButton', 'saveRow(this)', 'Save');
+    setValueButton(thirdCell, 'removeButton', 'removeRow(this)', 'Remove');
+
 }
