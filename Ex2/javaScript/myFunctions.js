@@ -42,7 +42,28 @@ function getValue(cell){
 }
 
 function deleteValuesFromCell(cell){
-    cell.removeChild(cell.childNodes[0]);
+
+    while (cell.firstChild) {
+        cell.removeChild(cell.lastChild);
+      }
+}
+
+function setValue(cell, value, type){
+    
+    let temp = document.createElement(type);
+    temp.innerHTML = value;
+    cell.appendChild(temp);
+}
+
+function setValueButton(cell, buttonClass, buttonOnclick, value){
+
+    var newButton = document.createElement('button');
+    newButton.innerHTML = value;
+    newButton.setAttribute('onclick', buttonOnclick);
+    newButton.setAttribute('class', buttonClass);
+    newButton.setAttribute('type', 'button');
+
+    cell.appendChild(newButton);
 }
 
 function saveRow(button){
@@ -60,8 +81,12 @@ function saveRow(button){
 
     deleteValuesFromCell(authorCell);
     deleteValuesFromCell(titleCell);
+    deleteValuesFromCell(thirdCell);
 
-    alert(newAuthorValue + newTitleValue);
+    setValue(authorCell, newAuthorValue, 'label');
+    setValue(titleCell, newTitleValue, 'label');
+    setValueButton(thirdCell, 'editButton', 'editRow(this)', 'Edit');
+    setValueButton(thirdCell, 'removeButton', 'removeRow(this)', 'Remove');
 
 }
 
