@@ -37,11 +37,31 @@ function addRow(){
     
 }
 
-function saveRow(button){
+function getValue(cell){
+    return cell.childNodes[0].value;
+}
 
+function deleteValuesFromCell(cell){
+    cell.removeChild(cell.childNodes[0]);
+}
+
+function saveRow(button){
     
     let numb = button.parentNode.parentNode.rowIndex;
-    alert(numb);
+
+    let theTable = document.getElementById("myTable");
+    let theRow = theTable.rows[numb];
+    let authorCell = theRow.cells[0];
+    let titleCell = theRow.cells[1];
+    let thirdCell = theRow.cells[2];
+
+    let newAuthorValue = getValue(authorCell);
+    let newTitleValue = getValue(titleCell);
+
+    deleteValuesFromCell(authorCell);
+    deleteValuesFromCell(titleCell);
+
+    alert(newAuthorValue + newTitleValue);
 
 }
 
@@ -56,7 +76,7 @@ function editRow(){
 
     let numb = button.parentNode.parentNode.rowIndex;
     alert(numb);
-    
+
 }
 
 function helloWorld(){
