@@ -90,10 +90,12 @@ function saveRow(button){
 
 }
 
-function removeRow(){
+function removeRow(button){
 
     let numb = button.parentNode.parentNode.rowIndex;
-    alert(numb);
+
+    let theTable = document.getElementById("myTable");
+    theTable.deleteRow(numb);
 
 }
 
