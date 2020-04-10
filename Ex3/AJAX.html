@@ -6,12 +6,20 @@
         src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
         <style>
             a{ margin: 10px; }
-            #content{ border: 1pxsolidblack; padding: 20px; width: 50%; }
+            #content{ 
+                border: 1px solid black; 
+                padding: 20px; 
+                width: 50%; 
+            }
         </style>
         <script type="text/javascript">
             $(function() {
-            $('a').click(function() {
-                $('#content').load('AJAX'+ $(this).attr('href'));
+                $('a').click(function() {
+                    $('#content').animate({height: '0px', width: '0px'}, ()=>{
+                    $('#content').load('AJAX'+ $(this).attr('href'), () => {
+                        $('#content').animate({ height: '500px', width: '500px'});
+                    });
+                });
                 return false;
             });
         });
