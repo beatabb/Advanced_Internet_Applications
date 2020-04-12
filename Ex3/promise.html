@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script type="text/javascript">
+
+$(function () {
+
+	const fix = 'https://cors-anywhere.herokuapp.com/';
+
+	$('button').one('click', function () {
+		console.log("on-click")
+
+		const page = new Promise((resolve, reject) => {
+			const request = new XMLHttpRequest();
+			const url = 'https://www.wikipedia.org/';
+			
+			request.open('GET', fix + url, true);
+
+        	request.onload = () => {
+            if (request.status === 200) {
+                resolve(request.response);
+            } 
+            else {
+                reject(request.statusText);
+            }}
+        
+        	request.onerror = () => reject(request.statusText);
+
+        	request.send();
+		
+		});
+
+		page.then( (response) => {
+			console.log("Success");
+			$('#main').append(response)
+			
+		}).catch(error => {
+			$('#main').html('Error: ' + error.status);
+			console.log("Failure");}
+		)
+
+	})
+	
+});
+</script>
+</head>
+<body>
+<button> Button </button>
+</body>
+<div id="main"></div>
+</html>
