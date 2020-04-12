@@ -6,9 +6,17 @@
 
 <script type="text/javascript">
 $(function () {
+	var loadable = true;
 	$('button').click( function() {
-		$.getJSON('guitars.json', function (data) {
-			
+		$.getJSON('guitars.json', function(data) {
+			if(loadable==true){
+				$("body").append("<ul>MyList</ul>");
+				for(var i = 0; i< data.Guitars.Guitar.length; i++){
+					let guitarBrand = data.Guitars.Guitar[i].Brand;
+					let guitarModel = data.Guitars.Guitar[i].Model;
+					$("ul").append("<li>" + guitarBrand + " " + guitarModel + "</li>");}
+				loadable = false;
+			}
 		})
 	})
 });
@@ -16,5 +24,6 @@ $(function () {
 </head>
 <body>
 <button> Button </button>
+
 </body>
 </html>
