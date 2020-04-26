@@ -1,0 +1,26 @@
+[
+    {
+        "id": 1,
+        "image": "/photos/athens.jpg",
+        "country": "Greece",
+        "city": "Athens",
+        "description": "About Athens ...",
+        "rating": 8.0
+    },
+    {
+        "id": 2,
+        "image": "/photos/newcastle.jpg",
+        "country": "United Kingdom",
+        "city": "Newcastle",
+        "description": "About Newcastle ... ",
+        "rating": 7.3
+    },
+    {
+        "id": 3,
+        "image": "./photos/paris.jpg",
+        "country": "France",
+        "city": "Paris",
+        "description": "About Paris ... ",
+        "rating": 9.0
+    }
+]
