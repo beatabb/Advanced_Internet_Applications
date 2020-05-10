@@ -41,8 +41,50 @@ router.get('/shopping-cart', function(req, res, next){
     return res.render('shop/shopping-cart', {products: null});
   }
   var cart = new Cart(req.session.cart);
-  res.render('shop/shopping-cart', {products: cart.generateArray(), totalPrice: cart.totalPrice});
+  res.render('shop/shopping-cart', {title: 'Parrots world', products: cart.generateArray(), totalPrice: cart.totalPrice});
   }
 )
+
+router.get('/checkout', function(req, res, next) {
+	if(!req.session.cart) {
+		res.redirect('/');
+	}
+	
+	var cart = new Cart(req.session.cart);
+	cart.clearCart();
+	req.session.cart = cart;
+	res.redirect('/');
+});
+
+
+router.get('/reduce-by-one/:id', function(req, res, next) {
+	if(!req.session.cart) {
+		res.redirect('/shopping-cart');
+	}
+	
+	var productId = req.params.id;
+	var cart = new Cart(req.session.cart ? req.session.cart : {});
+	   
+	cart.reduceByOne(productId);
+	req.session.cart = cart;
+  res.redirect('/shopping-cart');
+  
+});
+
+
+router.get('/remove-all/:id', function(req, res, next) {
+	if(!req.session.cart) {
+		res.redirect('/shopping-cart');
+	}
+	var productId = req.params.id;
+	var cart = new Cart(req.session.cart ? req.session.cart : {});
+	   
+		
+	cart.removeAll(productId);
+	req.session.cart = cart;
+	res.redirect('/shopping-cart');
+});
+
+
 
 module.exports = router;
