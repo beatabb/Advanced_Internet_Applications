@@ -1,47 +1,105 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Data.Entity;
 using System.Linq;
-using System.Web;
+using System.Net;
 using System.Web.Mvc;
 using WebApplication3.Models;
 
 namespace WebApplication3.Controllers
 {
-    // Metody w kontrolerze to tzw. akcje i są one
-    // wywoływane przy pomocy żądań HTTP skierowanych pod odpowiednie adresy.
-
-
-    // View() - . Funkcja ta zwraca
-    // w odpowiedzi na żądanie stronę wygenerowaną na podstawie widoku odpowiadającemu danej
-    // akcji.
     public class SongsController : Controller
     {
+        private MusicDbContext db = new MusicDbContext();
+
         // GET: Songs
         public ActionResult Index()
         {
-            Song song = new Song();
-            song.Name = "TheGreatest";
-            song.Artist = "Lana Del Rey";
-            song.Genre = "Alternative";
+            ViewBag.Genres = db.Genres.ToList();
 
-            song.Id = 1;
-
-            // Aby móc skorzystać z tego modelu należy
-            // zdefiniować silnie typowany widok
-
-            // Aby zdefiniować silnie typowany widok wystarczy skorzystać w widoku z klauzuli @model, po
-            // której należy podać klasę, która ma posłużyć jako model. --> Index.cshtml
-            return View(song.Name);
+            if (Request.IsAjaxRequest())
+            {
+                return PartialView("_SongsList", db.Songs.ToList());
+            }
+            else
+            {
+                return View(db.Songs.ToList());
+            }
         }
 
-        public ActionResult Square(int? id)
+        // GET: Songs/Create
+        public ActionResult Create()
         {
-            if(id == null)
+            ViewBag.Genres = db.Genres.ToList();
+            return View();
+        }
+
+        // POST: Songs/Create
+        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
+        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Create([Bind(Include = "Id,Name,Artist,GenreId")] Song song)
+        {
+            if (ModelState.IsValid)
             {
-                return Content("0");
+                db.Songs.Add(song);
+                db.SaveChanges();
+                return RedirectToAction("Index");
             }
-            string squNum = (id* id).ToString();
-            return Content(squNum);
+
+            ViewBag.Genres = db.Genres.ToList();
+            return View(song);
+        }
+
+        // GET: Songs/Edit/5
+        public ActionResult Edit(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Song song = db.Songs.Find(id);
+            if (song == null)
+            {
+                return HttpNotFound();
+            }
+            ViewBag.Genres = db.Genres.ToList();
+            return View(song);
+        }
+
+        // POST: Songs/Edit/5
+        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
+        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Edit([Bind(Include = "Id,Name,Artist,GenreId")] Song song)
+        {
+            if (ModelState.IsValid)
+            {
+                db.Entry(song).State = EntityState.Modified;
+                db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            return View(song);
+        }
+
+        // POST: Songs/Delete/5
+        //[HttpPost, ActionName("Delete")]
+        public ActionResult Delete(int id)
+        {
+            Song song = db.Songs.Find(id);
+            db.Songs.Remove(song);
+            db.SaveChanges();
+            return RedirectToAction("Index");
+        }
+
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing)
+            {
+                //zamknięcie połączenia z bazą danych
+                db.Dispose();
+            }
+            base.Dispose(disposing);
         }
     }
 }

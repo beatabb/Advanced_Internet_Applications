@@ -1,8 +1,14 @@
 ﻿@model WebApplication3.Models.Song
 
-
 @{
     ViewBag.Title = "Index";
 }
 
 <h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+
+<!-- Wstawić kontrolkę na stronę widoku -->
+@Html.Partial("_SongsList", Model)

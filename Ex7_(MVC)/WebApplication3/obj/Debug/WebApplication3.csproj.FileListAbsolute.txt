@@ -61,3 +61,7 @@ C:\Users\baczy\source\repos\WebApplication3\WebApplication3\obj\Debug\WebApplica
 C:\Users\baczy\source\repos\WebApplication3\WebApplication3\obj\Debug\WebApplication3.csproj.CopyComplete
 C:\Users\baczy\source\repos\WebApplication3\WebApplication3\obj\Debug\WebApplication3.dll
 C:\Users\baczy\source\repos\WebApplication3\WebApplication3\obj\Debug\WebApplication3.pdb
+C:\Users\baczy\source\repos\WebApplication3\WebApplication3\bin\EntityFramework.dll
+C:\Users\baczy\source\repos\WebApplication3\WebApplication3\bin\EntityFramework.SqlServer.dll
+C:\Users\baczy\source\repos\WebApplication3\WebApplication3\bin\EntityFramework.xml
+C:\Users\baczy\source\repos\WebApplication3\WebApplication3\bin\EntityFramework.SqlServer.xml
