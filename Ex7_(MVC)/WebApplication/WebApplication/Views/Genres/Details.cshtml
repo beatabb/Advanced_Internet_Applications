@@ -1,0 +1,53 @@
+﻿@model WebApplication.Models.Genre
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Genre</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dd>
+            <ul>
+                @{
+
+                    int number = 0;
+                    foreach (var song in ViewBag.Songs)
+                    {
+                        if (song.GenreId == Model.Id)
+                        {
+                            number++;
+                            <li>
+                                @song.Name
+                            </li>
+                        }
+                    }
+
+                    if (number == 0)
+                    {
+                        <li> There is no song in your genre </li>
+                    }
+
+                }
+
+            </ul>
+
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
