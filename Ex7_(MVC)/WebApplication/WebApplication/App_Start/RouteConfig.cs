@@ -14,15 +14,21 @@ namespace WebApplication
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
             routes.MapRoute(
-                name: "Default",
+                name: "Songs",
                 url: "{controller}/{action}/{id}",
                 defaults: new { controller = "Songs", action = "Index", id = UrlParameter.Optional }
             );
 
             routes.MapRoute(
-                name: "Square",
-                url: "Songs/Square/{id}",
-                defaults: new { id = UrlParameter.Optional }
+                name: "SongsOld",
+                url: "{controller}/{action}/{id}",
+                defaults: new { controller = "Songs", action = "Square", id = 23 }
+            );
+
+            routes.MapRoute(
+                name: "Default",
+                url: "{controller}/{action}/{id}",
+                defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
             );
         }
     }
