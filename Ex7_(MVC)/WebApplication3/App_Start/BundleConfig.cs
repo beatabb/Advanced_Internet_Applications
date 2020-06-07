@@ -1,13 +1,8 @@
 ﻿using System.Web;
 using System.Web.Optimization;
 
-namespace WebApplication3
+namespace WebApplication
 {
-    // Definicja paczek skryptów oraz styli
-    // Dzięki temu na stronie wystarczy wskazać
-    // tylko paczkę, z której chcemy skorzystać,
-    // a wszystkie wchodzące w niej skład pliki zostaną
-    // odpowiednio dołączone.
     public class BundleConfig
     {
         // Aby uzyskać więcej informacji o grupowaniu, odwiedź stronę https://go.microsoft.com/fwlink/?LinkId=301862
@@ -34,4 +29,3 @@ namespace WebApplication3
         }
     }
 }
-

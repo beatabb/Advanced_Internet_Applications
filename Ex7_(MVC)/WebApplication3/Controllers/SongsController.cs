@@ -1,10 +1,14 @@
-﻿using System.Data.Entity;
+﻿using System;
+using System.Collections.Generic;
+using System.Data;
+using System.Data.Entity;
 using System.Linq;
 using System.Net;
+using System.Web;
 using System.Web.Mvc;
-using WebApplication3.Models;
+using WebApplication.Models;
 
-namespace WebApplication3.Controllers
+namespace WebApplication.Controllers
 {
     public class SongsController : Controller
     {
@@ -14,44 +18,15 @@ namespace WebApplication3.Controllers
         public ActionResult Index()
         {
             ViewBag.Genres = db.Genres.ToList();
-
             if (Request.IsAjaxRequest())
             {
                 return PartialView("_SongsList", db.Songs.ToList());
             }
-            else
-            {
-                return View(db.Songs.ToList());
-            }
+            return View(db.Songs.ToList());
         }
 
-        // GET: Songs/Create
-        public ActionResult Create()
-        {
-            ViewBag.Genres = db.Genres.ToList();
-            return View();
-        }
-
-        // POST: Songs/Create
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Name,Artist,GenreId")] Song song)
-        {
-            if (ModelState.IsValid)
-            {
-                db.Songs.Add(song);
-                db.SaveChanges();
-                return RedirectToAction("Index");
-            }
-
-            ViewBag.Genres = db.Genres.ToList();
-            return View(song);
-        }
-
-        // GET: Songs/Edit/5
-        public ActionResult Edit(int? id)
+        // GET: Songs/Details/5
+        /*public ActionResult Details(int? id)
         {
             if (id == null)
             {
@@ -62,17 +37,58 @@ namespace WebApplication3.Controllers
             {
                 return HttpNotFound();
             }
+            return View(song);
+        }*/
+
+        // GET: Songs/Create
+        public ActionResult Create()
+        {
             ViewBag.Genres = db.Genres.ToList();
+            return View();
+        }
+
+        // POST: Songs/Create
+        // Aby zapewnić ochronę przed atakami polegającymi na przesyłaniu dodatkowych danych, włącz określone właściwości, z którymi chcesz utworzyć powiązania.
+        // Aby uzyskać więcej szczegółów, zobacz https://go.microsoft.com/fwlink/?LinkId=317598.
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Create([Bind(Include = "Id,Name,Artist,GenreId")] Song song)
+        {
+            ViewBag.Genres = db.Genres.ToList();
+            if (ModelState.IsValid)
+            {
+                db.Songs.Add(song);
+                db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+
+            return View(song);
+        }
+
+        // GET: Songs/Edit/5
+        public ActionResult Edit(int? id)
+        {
+            ViewBag.Genres = db.Genres.ToList();
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Song song = db.Songs.Find(id);
+            if (song == null)
+            {
+                return HttpNotFound();
+            }
             return View(song);
         }
 
         // POST: Songs/Edit/5
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
+        // Aby zapewnić ochronę przed atakami polegającymi na przesyłaniu dodatkowych danych, włącz określone właściwości, z którymi chcesz utworzyć powiązania.
+        // Aby uzyskać więcej szczegółów, zobacz https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include = "Id,Name,Artist,GenreId")] Song song)
         {
+            ViewBag.Genres = db.Genres.ToList();
             if (ModelState.IsValid)
             {
                 db.Entry(song).State = EntityState.Modified;
@@ -82,8 +98,23 @@ namespace WebApplication3.Controllers
             return View(song);
         }
 
+        // GET: Songs/Delete/5
+        /*public ActionResult Delete(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Song song = db.Songs.Find(id);
+            if (song == null)
+            {
+                return HttpNotFound();
+            }
+            return View(song);
+        }*/
+
         // POST: Songs/Delete/5
-        //[HttpPost, ActionName("Delete")]
+        [HttpDelete]
         public ActionResult Delete(int id)
         {
             Song song = db.Songs.Find(id);
@@ -96,7 +127,6 @@ namespace WebApplication3.Controllers
         {
             if (disposing)
             {
-                //zamknięcie połączenia z bazą danych
                 db.Dispose();
             }
             base.Dispose(disposing);

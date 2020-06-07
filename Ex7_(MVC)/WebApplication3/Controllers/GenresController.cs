@@ -6,9 +6,9 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
-using WebApplication3.Models;
+using WebApplication.Models;
 
-namespace WebApplication3.Controllers
+namespace WebApplication.Controllers
 {
     public class GenresController : Controller
     {
@@ -17,12 +17,17 @@ namespace WebApplication3.Controllers
         // GET: Genres
         public ActionResult Index()
         {
+            if (Request.IsAjaxRequest())
+            {
+                return PartialView("_GenresList", db.Genres.ToList());
+            }
             return View(db.Genres.ToList());
         }
 
         // GET: Genres/Details/5
         public ActionResult Details(int? id)
         {
+            ViewBag.Songs = db.Songs.ToList();
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
@@ -32,8 +37,6 @@ namespace WebApplication3.Controllers
             {
                 return HttpNotFound();
             }
-
-            ViewBag.Songs = db.Songs.ToList();
             return View(genre);
         }
 
@@ -44,8 +47,8 @@ namespace WebApplication3.Controllers
         }
 
         // POST: Genres/Create
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
+        // Aby zapewnić ochronę przed atakami polegającymi na przesyłaniu dodatkowych danych, włącz określone właściwości, z którymi chcesz utworzyć powiązania.
+        // Aby uzyskać więcej szczegółów, zobacz https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "Id,Name")] Genre genre)
@@ -76,8 +79,8 @@ namespace WebApplication3.Controllers
         }
 
         // POST: Genres/Edit/5
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
+        // Aby zapewnić ochronę przed atakami polegającymi na przesyłaniu dodatkowych danych, włącz określone właściwości, z którymi chcesz utworzyć powiązania.
+        // Aby uzyskać więcej szczegółów, zobacz https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include = "Id,Name")] Genre genre)
@@ -91,8 +94,23 @@ namespace WebApplication3.Controllers
             return View(genre);
         }
 
+        // GET: Genres/Delete/5
+        /*public ActionResult Delete(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Genre genre = db.Genres.Find(id);
+            if (genre == null)
+            {
+                return HttpNotFound();
+            }
+            return View(genre);
+        }*/
+
         // POST: Genres/Delete/5
-        //[HttpPost, ActionName("Delete")]
+        [HttpDelete]
         public ActionResult Delete(int id)
         {
             Genre genre = db.Genres.Find(id);

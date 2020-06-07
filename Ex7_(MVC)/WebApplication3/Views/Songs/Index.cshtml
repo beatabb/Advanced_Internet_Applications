@@ -1,4 +1,4 @@
-﻿@model WebApplication3.Models.Song
+﻿@model IEnumerable<WebApplication.Models.Song>
 
 @{
     ViewBag.Title = "Index";
@@ -10,5 +10,4 @@
     @Html.ActionLink("Create New", "Create")
 </p>
 
-<!-- Wstawić kontrolkę na stronę widoku -->
 @Html.Partial("_SongsList", Model)
