@@ -8,8 +8,9 @@ namespace WebApplication.Models
 {
     public class MusicDbContext : DbContext
     {
-        public DbSet<SongModel> Songs { get; set; }
+        public DbSet<Song> Songs { get; set; }
 
-        public System.Data.Entity.DbSet<WebApplication.Models.GenreModel> Genres { get; set; }
+        public DbSet<Genre> Genres { get; set; }
+
     }
 }

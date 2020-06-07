@@ -18,12 +18,13 @@ namespace WebApplication
                 url: "{controller}/{action}/{id}",
                 defaults: new { controller = "Songs", action = "Index", id = UrlParameter.Optional }
             );
-
+            /*
             routes.MapRoute(
-                name: "SongsOld",
+                name: "Songs",
                 url: "{controller}/{action}/{id}",
                 defaults: new { controller = "Songs", action = "Square", id = 23 }
             );
+            */
 
             routes.MapRoute(
                 name: "Default",

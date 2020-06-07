@@ -127,15 +127,15 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="Controllers\GenreModelsController.cs" />
+    <Compile Include="Controllers\GenresController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\SongsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\GenreModel.cs" />
+    <Compile Include="Models\Genre.cs" />
     <Compile Include="Models\MusicDbContext.cs" />
-    <Compile Include="Models\SongModel.cs" />
+    <Compile Include="Models\Song.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -182,11 +182,11 @@
     <Content Include="Views\Songs\Edit.cshtml" />
     <Content Include="Views\Songs\Index.cshtml" />
     <Content Include="Views\Songs\_SongsList.cshtml" />
-    <Content Include="Views\GenreModels\Create.cshtml" />
-    <Content Include="Views\GenreModels\Delete.cshtml" />
-    <Content Include="Views\GenreModels\Details.cshtml" />
-    <Content Include="Views\GenreModels\Edit.cshtml" />
-    <Content Include="Views\GenreModels\Index.cshtml" />
+    <Content Include="Views\Genres\Create.cshtml" />
+    <Content Include="Views\Genres\Delete.cshtml" />
+    <Content Include="Views\Genres\Details.cshtml" />
+    <Content Include="Views\Genres\Edit.cshtml" />
+    <Content Include="Views\Genres\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

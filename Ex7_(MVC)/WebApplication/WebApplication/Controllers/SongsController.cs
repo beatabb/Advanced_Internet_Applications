@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Data.Entity;
+﻿using System.Data.Entity;
 using System.Linq;
 using System.Net;
-using System.Web;
 using System.Web.Mvc;
 using WebApplication.Models;
 
@@ -17,26 +13,17 @@ namespace WebApplication.Controllers
         // GET: Songs
         public ActionResult Index()
         {
-            if (Request.IsAjaxRequest())
-                return PartialView("_SongsList", db.Songs.ToList());
-            else
-                return View(db.Songs.ToList());
-        }
+            ViewBag.Genres = db.Genres.ToList();
 
-        //// GET: Songs/Details/5
-        //public ActionResult Details(int? id)
-        //{
-        //    if (id == null)
-        //    {
-        //        return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-        //    }
-        //    SongModel songModel = db.Songs.Find(id);
-        //    if (songModel == null)
-        //    {
-        //        return HttpNotFound();
-        //    }
-        //    return View(songModel);
-        //}
+            if (Request.IsAjaxRequest())
+            {
+                return PartialView("_SongsList", db.Songs.ToList());
+            }
+            else
+            {
+                return View(db.Songs.ToList());
+            }
+        }
 
         // GET: Songs/Create
         public ActionResult Create()
@@ -50,16 +37,17 @@ namespace WebApplication.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Name,Artist,GenreId")] SongModel songModel)
+        public ActionResult Create([Bind(Include = "Id,Name,Artist,GenreId")] Song song)
         {
             if (ModelState.IsValid)
             {
-                db.Songs.Add(songModel);
+                db.Songs.Add(song);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            return View(songModel);
+            ViewBag.Genres = db.Genres.ToList();
+            return View(song);
         }
 
         // GET: Songs/Edit/5
@@ -69,15 +57,13 @@ namespace WebApplication.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            SongModel songModel = db.Songs.Find(id);
-            if (songModel == null)
+            Song song = db.Songs.Find(id);
+            if (song == null)
             {
                 return HttpNotFound();
             }
-
             ViewBag.Genres = db.Genres.ToList();
-
-            return View(songModel);
+            return View(song);
         }
 
         // POST: Songs/Edit/5
@@ -85,39 +71,23 @@ namespace WebApplication.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,Name,Artist,GenreId")] SongModel songModel)
+        public ActionResult Edit([Bind(Include = "Id,Name,Artist,GenreId")] Song song)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(songModel).State = EntityState.Modified;
+                db.Entry(song).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(songModel);
+            return View(song);
         }
 
-        //// GET: Songs/Delete/5
-        //public ActionResult Delete(int? id)
-        //{
-        //    if (id == null)
-        //    {
-        //        return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-        //    }
-        //    SongModel songModel = db.Songs.Find(id);
-        //    if (songModel == null)
-        //    {
-        //        return HttpNotFound();
-        //    }
-        //    return View(songModel);
-        //}
-
-        // DELETE: Songs/Delete/5
-        [HttpDelete, ActionName("Delete")]
-        //[ValidateAntiForgeryToken]
+        // POST: Songs/Delete/5
+        //[HttpPost, ActionName("Delete")]
         public ActionResult Delete(int id)
         {
-            SongModel songModel = db.Songs.Find(id);
-            db.Songs.Remove(songModel);
+            Song song = db.Songs.Find(id);
+            db.Songs.Remove(song);
             db.SaveChanges();
             return RedirectToAction("Index");
         }
@@ -126,6 +96,7 @@ namespace WebApplication.Controllers
         {
             if (disposing)
             {
+                //zamknięcie połączenia z bazą danych
                 db.Dispose();
             }
             base.Dispose(disposing);
