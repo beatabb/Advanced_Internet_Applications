@@ -18,16 +18,32 @@
             @Html.DisplayFor(model => model.Name)
         </dd>
 
-        @{
-            var myQuery = from s in (ViewBag.Songs as IEnumerable<WebApplication.Models.Song>) where s.GenreId == Model.Id select s;
-        }
-        <ul >
-        @foreach (var item in myQuery)
-        {
-            <li>@item.Name</li>
-        }
-        </ul>
-            
+        <dd>
+            <ul>
+                @{
+
+                    int number = 0;
+                    foreach (var song in ViewBag.Songs)
+                    {
+                        if (song.GenreId == Model.Id)
+                        {
+                            number++;
+                            <li>
+                                @song.Name
+                            </li>
+                        }
+                    }
+
+                    if (number == 0)
+                    {
+                        <li> There is no song in your genre </li>
+                    }
+
+                }
+
+            </ul>
+
+        </dd>
 
     </dl>
 </div>
