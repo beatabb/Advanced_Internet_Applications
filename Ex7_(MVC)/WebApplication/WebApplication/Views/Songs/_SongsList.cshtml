@@ -26,15 +26,9 @@
             </td>
             <td>
                 @{
-                    foreach (var genre in ViewBag.Genres)
-                    {
-                        if (genre.Id == item.Id)
-                        {
-                            @genre.Name;
-                            break;
-                        }
-                    }
+                    var myQuery = from g in (ViewBag.Genres as IEnumerable<WebApplication.Models.Genre>) where g.Id == item.GenreId select g.Name;
                 }
+                @Html.DisplayFor(modelItem => myQuery)
             </td>
             <td>
                 @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
