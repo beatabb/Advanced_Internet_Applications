@@ -15,6 +15,6 @@ namespace WebApplication.Models
         [StringLength(100, ErrorMessage = "Maximal length of thename of a song is 100 characters!")]
         public string Name { get; set; }
 
-        public ICollection Songs;
+        public ICollection<Song> Collection { get; set; }
     }
 }

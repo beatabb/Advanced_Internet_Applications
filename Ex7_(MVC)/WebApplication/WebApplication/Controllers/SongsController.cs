@@ -1,4 +1,6 @@
 ﻿using System.Data.Entity;
+using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Web.Mvc;
@@ -79,6 +81,7 @@ namespace WebApplication.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
+            ViewBag.Genres = db.Genres.ToList();
             return View(song);
         }
 
