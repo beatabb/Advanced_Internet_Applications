@@ -13,36 +13,21 @@
         <dt>
             @Html.DisplayNameFor(model => model.Name)
         </dt>
-        <dt>
-            Song List
-        </dt>
 
         <dd>
             @Html.DisplayFor(model => model.Name)
         </dd>
 
-        <dd>
-            <ul>
-                @{
-                    int number = 0;
-                    foreach (var song in ViewBag.Songs)
-                    {
-                        if (song.GenreId == Model.Id)
-                        {
-                            number++;
-                            <li>
-                                @song.Name
-                            </li>
-                        }
-                    }
+        @{ 
+            var myQuery = from s in (ViewBag.Songs as IEnumerable<WebApplication.Models.Song>) where s.GenreId == Model.Id select s;
+        }
 
-                    if (number == 0)
-                    {
-                        <li> There is no song in this genre </li>
-                    }
-                }
-            </ul>
-        </dd>
+        <ul >
+            @foreach (var item in myQuery)
+            {
+                <li>@item.Name</li>
+            }
+        </ul>
 
     </dl>
 </div>
